@@ -11,7 +11,9 @@ namespace ditipTravel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            dbDataContext db = new dbDataContext();
+            db.tbl_Persons.ToList();
+            //db.tbl_Persons.Where(op=> op.)
         }
     }
 }
