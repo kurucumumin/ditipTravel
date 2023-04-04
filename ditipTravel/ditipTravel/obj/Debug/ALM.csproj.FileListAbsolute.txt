@@ -1,0 +1,234 @@
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ALM.dll.config
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ALM.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ALM.pdb
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\csc.exe
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\csc.exe.config
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\csc.rsp
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\csi.exe
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\csi.exe.config
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\csi.rsp
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.AppContext.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Console.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.IO.Compression.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Net.Http.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Net.Sockets.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.ValueTuple.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Xml.XPath.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\vbc.exe
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\vbc.exe.config
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\vbc.rsp
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\VBCSCompiler.exe
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Antlr3.Runtime.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Data.v18.2.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Printing.v18.2.Core.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.RichEdit.v18.2.Core.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Web.ASPxThemes.v18.2.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Web.Resources.v18.2.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Web.v18.2.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Newtonsoft.Json.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\System.Web.Optimization.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\WebGrease.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Pdf.v18.2.Core.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Office.v18.2.Core.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Images.v18.2.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Data.v18.2.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Printing.v18.2.Core.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.RichEdit.v18.2.Core.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Web.v18.2.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\System.Web.Optimization.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Newtonsoft.Json.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Antlr3.Runtime.pdb
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Pdf.v18.2.Core.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\DevExpress.Office.v18.2.Core.xml
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.Data.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.Data.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.Data.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.Data.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.Web.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.Web.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.Web.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.Web.v18.2.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\de\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\es\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ja\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\bin\ru\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\obj\Debug\ALM.dll.licenses
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\obj\Debug\ALM.csproj.CoreCompileInputs.cache
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\obj\Debug\ALM.csproj.CopyComplete
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\obj\Debug\ALM.dll
+C:\Users\kuruc\OneDrive\Belgeler\GitHub\turmedyaalm\ALM\obj\Debug\ALM.pdb
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ALM.dll.config
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ALM.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ALM.pdb
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\csc.exe
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\csc.exe.config
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\csc.rsp
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\csi.exe
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\csi.exe.config
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\csi.rsp
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.AppContext.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Console.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.IO.Compression.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Net.Http.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Net.Sockets.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.ValueTuple.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Xml.XPath.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\vbc.exe
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\vbc.exe.config
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\vbc.rsp
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\VBCSCompiler.exe
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Antlr3.Runtime.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\AspNet.ScriptManager.bootstrap.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Data.v18.2.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Printing.v18.2.Core.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.RichEdit.v18.2.Core.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Web.ASPxThemes.v18.2.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Web.Resources.v18.2.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Web.v18.2.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.ScriptManager.MSAjax.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.ScriptManager.WebForms.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Newtonsoft.Json.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\System.Web.Optimization.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\WebGrease.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Pdf.v18.2.Core.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Office.v18.2.Core.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Images.v18.2.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Data.v18.2.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Printing.v18.2.Core.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.RichEdit.v18.2.Core.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Web.v18.2.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\System.Web.Optimization.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Newtonsoft.Json.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Antlr3.Runtime.pdb
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.AspNet.FriendlyUrls.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Pdf.v18.2.Core.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\DevExpress.Office.v18.2.Core.xml
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.Data.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.Data.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.Data.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.Data.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.Printing.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.RichEdit.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.Web.Resources.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.Web.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.Web.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.Web.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.Web.v18.2.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\de\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\es\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ja\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\bin\ru\DevExpress.Office.v18.2.Core.resources.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\obj\Debug\ALM.dll.licenses
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\obj\Debug\ALM.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\obj\Debug\ALM.dll
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\obj\Debug\ALM.pdb
+C:\Users\Pc\Desktop\Yeni Proje\Yeni Proje Oluştururken\ALM\obj\Debug\ALM.csproj.CopyComplete

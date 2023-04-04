@@ -1,0 +1,668 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="PortCRMWeb.Site1" %>
+
+<!DOCTYPE html>
+
+<html lang="tr">
+<head runat="server">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <title>PORT A.Ş. CRM</title>
+
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="dist/js/adminlte.js"></script>
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <script src="dist/js/demo.js"></script>
+    <script src="dist/js/pages/dashboard3.js"></script>
+
+     <style type="text/css">
+        .grid * {
+            /*            font-family: 'Angsana New' !important;*/
+            font-size: 12px !important;
+        }
+        
+    </style>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</head>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <form id="form1" runat="server">
+
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+
+                <div class="wrapper">
+                    <!-- Navbar -->
+                    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                        <!-- Left navbar links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                            </li>
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <a href="main.aspx" class="nav-link">Anasayfa</a>
+                            </li>
+                            <%--<li class="nav-item d-none d-sm-inline-block">
+                                <a href="#" class="nav-link" style="font-weight: bold; color: red;">Destek</a>
+                            </li>--%>
+                        </ul>
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item" style="padding: 0 !important; margin: 0 !important">
+                                <img src="images/port_logo_y.jpg" height="38" />
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                    <!-- Main Sidebar Container -->
+                    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                        <!-- Brand Logo -->
+                        <a href="main.aspx" class="brand-link">
+                            <%--<img src="images/icons/favicon.ico" alt="" class="brand-image img-circle elevation-3 bg-white" style="opacity: .8" />--%>
+                            <span class="brand-text font-weight-light"><strong>CRM ANASAYFA</strong></span>
+                        </a>
+
+                        <!-- Sidebar -->
+                        <div class="sidebar">
+                            <!-- Sidebar user panel (optional) -->
+                            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                                <div class="image">
+                                    <img src="images/ussericon.png" class="img-circle elevation-2" alt="User Image" />
+                                </div>
+                                <div class="info d-flex justify-content-between align-items-center mb-3">
+                                    <a href="#" class="d-block">
+                                        <asp:Label ID="lblKullanici" runat="server" Text=""></asp:Label></a>
+                                    <a href="Login.aspx?Logout=1" class="d-block"><i class="fas fa-window-close" style="color: white; padding-left: 50px;"></i></a>
+                                </div>
+
+                            </div>
+
+                            <!-- Sidebar Menu -->
+                            <nav class="mt-2">
+
+                                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                                    <li id="btnSiparis" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                            <p>
+                                                Siparişler               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnYeniSiparis" runat="server" class="nav-item">
+                                                <a href="siparis-girisi.aspx" class="nav-link">
+                                                    <i class="fas fa-cart-plus nav-icon"></i>
+                                                    <p>Sipariş Girişi</p>
+                                                </a>
+                                            </li>
+
+                                             <li id="btnExcelSiparis" runat="server" class="nav-item" visible="false">
+                                                <a href="excel-siparis-yukleme.aspx" class="nav-link">
+                                                    <i class="fas fa-file-excel nav-icon"></i>
+                                                    <p>Sipariş Girişi (.xlsx) </p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="onay-bekleyen-siparislerim.aspx" class="nav-link">
+                                                    <i class="fas fa-dolly nav-icon"></i>
+                                                    <p>Onay Bekleyen Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="tum-siparisler.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Tüm Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                            <li id="btnDetayliSiparis" runat="server" class="nav-item">
+                                                <a href="tum-detayli-siparisler.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Tüm Detaylı Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                            <li id="btnSiparisIzleme" runat="server" class="nav-item">
+                                                <a href="siparis-izleme.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Sipariş İzleme</p>
+                                                </a>
+                                            </li>
+
+                                            <li id="btnFinansOnayliSiparisler" runat="server" class="nav-item" visible="false">
+                                                <a href="finans-onayli-siparisler.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Finans Onayli Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>
+
+                                    <%-- <li id="Li3" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                            <p>
+                                                Parçalı Siparişler               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+
+                                            <li id="Li1" runat="server" class="nav-item">
+                                                <a href="siparis-girisi-parcali.aspx" class="nav-link">
+                                                    <i class="fas fa-cart-plus nav-icon"></i>
+                                                    <p>Sipariş Girişi Parçalı</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="onay-bekleyen-parcali-siparislerim.aspx" class="nav-link">
+                                                    <i class="fas fa-dolly nav-icon"></i>
+                                                    <p>Onay Bekleyen Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                        </ul>
+                                    </li>--%>
+
+                                    <li id="btnSatinAlma" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-store"></i>
+                                            <p>
+                                                Satın Alma
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li class="nav-item">
+                                                <a href="satin-alma-girisi.aspx" class="nav-link">
+                                                    <i class="fas fa-plus-square nav-icon"></i>
+                                                    <p>Yeni Satın Alma</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="onay-bekleyen-satin-almalarim.aspx" class="nav-link">
+                                                    <i class="fas fa-dolly nav-icon"></i>
+                                                    <p>Onay Bekleyen <br> Satın Almalar</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="tum-satin-almalar.aspx" class="nav-link">
+                                                    <i class="fas fa-store-alt nav-icon"></i>
+                                                    <p>Tüm Satın Almalar</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="tum-satin-almalar-depo.aspx" class="nav-link">
+                                                    <i class="fas fa-store-alt nav-icon"></i>
+                                                    <p>Finans Onayı Bekleyen <br> Satın Almalar</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="btniade" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-store"></i>
+                                            <p>
+                                                İade
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnYeniIade" runat="server" class="nav-item">
+                                                <a href="iade-girisi-hakem-heyeti.aspx?Mod=Normal" class="nav-link">
+                                                    <i class="fas fa-plus-square nav-icon"></i>
+                                                    <p>Yeni İade</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnYeniIadeHakemHeyeti" runat="server" class="nav-item">
+                                                <a href="iade-girisi-hakem-heyeti.aspx?Mod=HakemHeyeti" class="nav-link">
+                                                    <i class="fas fa-plus-square nav-icon"></i>
+                                                    <p>Yeni İade <br> Hakem Heyeti</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="onay-bekleyen-iadelerim.aspx" class="nav-link">
+                                                    <i class="fas fa-dolly nav-icon"></i>
+                                                    <p>Onay Bekleyen İadeler</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnTumIade" runat="server" class="nav-item">
+                                                <a href="tum-iadeler.aspx" class="nav-link">
+                                                    <i class="fas fa-store-alt nav-icon"></i>
+                                                    <p>Tüm İadeler</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="btnKullanici" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-user-tie"></i>
+                                            <p>
+                                                Kullanıcı Yönetimi
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li class="nav-item">
+                                                <a href="sifre-degistir.aspx" class="nav-link">
+                                                    <i class="fas fa-key nav-icon"></i>
+                                                    <p>Şifre Değiştir</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="btnDestek" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-headset"></i>
+                                            <p>
+                                                Destek
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li class="nav-item">
+                                                <a href="destek-mesajlari.aspx?ID=1" class="nav-link">
+                                                    <i class="far fa-comment-alt nav-icon"></i>
+                                                    <p>Destek Taleplerim</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="destek-mesajlari.aspx?ID=2" class="nav-link">
+                                                    <i class="fas fa-comment-alt nav-icon"></i>
+                                                    <p>Kapanan Destek Talepleri</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="btnLog" runat="server" class="nav-item has-treeview">
+                                        <a href="tum-loglar.aspx" class="nav-link">
+                                            <i class="nav-icon fas fa-mouse nav-icon"></i>
+                                            <p>
+                                                Log
+              
+                                            </p>
+                                        </a>
+                                    </li>
+
+
+                                    <%-- <li id="btnUrun" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                            <p>
+                                                Ürün Modülü
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li class="nav-item">
+                                                <a href="satisa-kapanan-urunler.aspx" class="nav-link">
+                                                    <i class="far fa-comment-alt nav-icon"></i>
+                                                    <p>Satışa Kapanan Ürünler</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="omt-bazli-urunler.aspx" class="nav-link">
+                                                    <i class="far fa-comment-alt nav-icon"></i>
+                                                    <p>OMT Bazlı Ürünler</p>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="bayi-bazli-urunler.aspx" class="nav-link">
+                                                    <i class="far fa-comment-alt nav-icon"></i>
+                                                    <p>Bayi Bazlı Ürünler</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>--%>
+
+                                    <li id="btnUrun" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                            <p>
+                                                Ürün Modülü
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnDagilimListesi" runat="server" class="nav-item">
+                                                <a href="dagilim-listesi.aspx" class="nav-link">
+                                                    <i class="fas fa-balance-scale-left nav-icon"></i>
+                                                    <p>Dağılım Listesi</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnDagilimListesiOlusturma" runat="server" class="nav-item">
+                                                <a href="dagilim-listesi-olusturma.aspx" class="nav-link">
+                                                    <i class="fas fa-balance-scale-left nav-icon"></i>
+                                                    <p>Dağılım Listesi <br> Oluşturma</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnStokKontrol" runat="server" class="nav-item">
+                                                <a href="stok-kontrol.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Stok Kontrol</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnUrunYonetimi" runat="server" class="nav-item">
+                                                <a href="urun-yonetimi.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Ürün Yönetimi</p>
+                                                </a>
+                                            </li>
+                                             <li id="btnUrunOzellikleri" runat="server" class="nav-item">
+                                                <a href="urun-ozellikleri.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Ürün Özellikleri</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+
+                                    <li id="btnBayi" runat="server" class="nav-item has-treeview">
+                                        <a href="tum-bayiler.aspx" class="nav-link">
+                                            <i class="nav-icon fa fa-users nav-icon"></i>
+                                            <p>
+                                                Bayi Listesi
+              
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                    <li id="btnTemlik" runat="server" class="nav-item has-treeview">
+                                        <a href="temlikli-fiyat-yukleme.aspx" class="nav-link">
+                                            <i class="nav-icon fa fa-credit-card nav-icon"></i>
+                                            <p>
+                                                Temlikli Fiyat Listesi
+              
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                    <li id="btnBayiAtama" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-users nav-icon"></i>
+                                            <p>
+                                                Bayi Müşteri Temsilcisi
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnMusteriTemsilcisi" runat="server" class="nav-item">
+                                                <a href="bayi-musteri-iliskisi.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-phone nav-icon"></i>
+                                                    <p>
+                                                        Bayi & OMT
+              
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li id="Li2" runat="server" class="nav-item">
+                                                <a href="bayi-musteri-iliskisi-sy.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-phone nav-icon"></i>
+                                                    <p>
+                                                        Bayi & SY
+              
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                     <li id="btnimei" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-users nav-icon"></i>
+                                            <p>
+                                                IMEI
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnimeiRapor" runat="server" class="nav-item">
+                                                <a href="imei-rapor.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>
+                                                        IMEI
+              
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li id="btnimeiSorgulama" runat="server" class="nav-item">
+                                                <a href="imei-ara.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>
+                                                        IMEI Sorgulama
+              
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                     <li id="btnVadeFarki" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fa fa-industry nav-icon"></i>
+                                            <p>
+                                                Vade Farkı
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="Li4" runat="server" class="nav-item">
+                                                <a href="vade-farki-listesi.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-industry nav-icon"></i>
+                                                    <p>
+                                                        Vade Farkı Listesi
+              
+                                                    </p>
+                                                </a>
+                                            </li>
+                                            <li id="Li5" runat="server" class="nav-item">
+                                                <a href="vade-farki-detaylari.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-industry nav-icon"></i>
+                                                    <p>
+                                                        Vade Farkı Detayları
+              
+                                                    </p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="btnRapor" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon far fa-chart-bar nav-icon"></i>
+                                            <p>
+                                                Rapor
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnMarsSiparis" runat="server" class="nav-item">
+                                                <a href="mars-siparis-rapor.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Mars Sipariş</p>
+                                                </a>
+                                            </li>
+                                            <%-- <li id="btnKrediTutari" runat="server" class="nav-item">
+                                                <a href="tum-bayiler-kredi-tutarlari.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Kredi Tutarları</p>
+                                                </a>
+                                            </li>--%>
+                                            <li id="btnStok" runat="server" class="nav-item">
+                                                <a href="tum-stoklar.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Stok</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnCMLK" runat="server" class="nav-item">
+                                                <a href="crm-mars-logo-karsilastirma-raporu.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>C.M.L.K. Raporu</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnHesapExtresi" runat="server" class="nav-item">
+                                                <a href="hesap-extresi-raporu.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Hesap Extresi Raporu</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnB2B" runat="server" class="nav-item">
+                                                <a href="bayi-kullanici-sifre.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>B2B</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnMukerrerSiparisler" runat="server" class="nav-item">
+                                                <a href="tum-mukerrer-siparisler.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Mükerrer Siparişler</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnBekleyenSiparisler" runat="server" class="nav-item">
+                                                <a href="tum-bekleyen-siparisler.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Bekleyen Siparişler</p>
+                                                </a>
+                                            </li>
+                                             <li id="btnFaturalanmamisTutariEtkileyenSiparisler" runat="server" class="nav-item">
+                                                <a href="tum-faturalanmamis-tutari-etkileyen-siparisler.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Faturalanmamış Tutarı <br> Etkileyen Siparişler</p>
+                                                </a>
+                                            </li>
+                                            <li id="Li1" runat="server" class="nav-item">
+                                                <a href="stok-sayim-raporu.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>Stok Sayım Raporu</p>
+                                                </a>
+                                            </li>
+                                            <li id="btnVGA" runat="server" class="nav-item">
+                                                <a href="bayi-vadesi-gecmis-borc.aspx" class="nav-link">
+                                                    <i class="nav-icon fa fa-mobile nav-icon"></i>
+                                                    <p>VGA Raporu</p>
+                                                </a>
+                                            </li>
+                                            <br />
+                                        </ul>
+                                    </li>
+
+                                    <li id="btnDuyurular" class="nav-item" runat="server">
+                                        <a href="popup-yonetim.aspx" class="nav-link">
+                                            <i class="nav-icon fas fa-bullhorn"></i>
+                                            <p>
+                                                Popup İşlemleri
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                            <!-- /.sidebar-menuuuuuuuuuuu -->
+                        </div>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <!-- Control Sidebar -->
+                    <aside class="control-sidebar control-sidebar-dark">
+                        <!-- Control sidebar content goes here -->
+                    </aside>
+                    <!-- /.control-sidebar -->
+
+                    <!-- Main Footer -->
+                    <footer class="main-footer">
+                        <strong>
+                            <asp:Label ID="lblBayiSube" runat="server" Text=""></asp:Label></strong>
+
+                        <div class="float-right d-none d-sm-inline-block">
+                            <b>Copyright 2020 PORT A.Ş. - All rights reserved. Version</b> 1.0.0. BETA
+   
+                        </div>
+                    </footer>
+
+
+
+                </div>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
+
+    </form>
+</body>
+</html>
+
+<script>
+
+    var url = window.location;
+
+    //url.href = "https://localhost:44364"+url.pathname;
+    //string = url.href;
+
+    //queryVarmi = string.indexOf("?");
+
+    //if (queryVarmi != "-1") {
+    //    string = string.slice(0, queryVarmi);       
+    //}
+    // for sidebar menu entirely but not cover treeview
+    $('ul.nav-sidebar a').filter(function () {
+        return this.href == url;
+    }).parent().css({ "background-color": "rgba(255, 255, 255, 0.1)", "color": "#ffffff" });
+
+    // for treeview
+    $('ul.nav-treeview a').filter(function () {
+        return this.href == url;
+    }).parentsUntil(".nav-sidebar > .nav-treeview").addClass('active menu-open');
+</script>

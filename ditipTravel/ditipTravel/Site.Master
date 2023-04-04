@@ -2,69 +2,240 @@
 
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="tr">
 <head runat="server">
+
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-    <asp:PlaceHolder runat="server">
-        <%: Scripts.Render("~/bundles/modernizr") %>
-    </asp:PlaceHolder>
+    <title>DİTİB</title>
 
-    <webopt:bundlereference runat="server" path="~/Content/css" />
-    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css" />
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" />
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css" />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="dist/css/adminlte.min.css" />
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet" />
+
+    <!-- REQUIRED SCRIPTS -->
+
+    <!-- jQuery -->
+    <script src="plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE -->
+    <script src="dist/js/adminlte.js"></script>
+
+    <!-- OPTIONAL SCRIPTS -->
+    <script src="plugins/chart.js/Chart.min.js"></script>
+    <script src="dist/js/demo.js"></script>
+    <script src="dist/js/pages/dashboard3.js"></script>
+
+     <style type="text/css">
+        .grid * {
+            /*            font-family: 'Angsana New' !important;*/
+            font-size: 12px !important;
+        }
+        
+    </style>
+
+    <asp:ContentPlaceHolder ID="MainContent" runat="server">
+    </asp:ContentPlaceHolder>
 
 </head>
-<body>
-    <form runat="server">
-        <asp:ScriptManager runat="server">
-            <Scripts>
-                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
-                <%--Framework Scripts--%>
-                <asp:ScriptReference Name="MsAjaxBundle" />
-                <asp:ScriptReference Name="jquery" />
-                <asp:ScriptReference Name="bootstrap" />
-                <asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
-                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
-                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
-                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
-                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
-                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
-                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
-                <asp:ScriptReference Name="WebFormsBundle" />
-                <%--Site Scripts--%>
-            </Scripts>
-        </asp:ScriptManager>
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
+    <form id="form1" runat="server">
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+            <ContentTemplate>
+
+                <div class="wrapper">
+                    <!-- Navbar -->
+                    <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+                        <!-- Left navbar links -->
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+                            </li>
+                            <li class="nav-item d-none d-sm-inline-block">
+                                <a href="frm_allTravel.aspx" class="nav-link">Anasayfa</a>
+                            </li>
+                            <%--<li class="nav-item d-none d-sm-inline-block">
+                                <a href="#" class="nav-link" style="font-weight: bold; color: red;">Destek</a>
+                            </li>--%>
+                        </ul>
+
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item" style="padding: 0 !important; margin: 0 !important">
+                             <%--   <img src="images/port_logo_y.jpg" height="38" />--%>
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                    <!-- Main Sidebar Container -->
+                    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+                        <!-- Brand Logo -->
+                        <a href="main.aspx" class="brand-link">
+                            <%--<img src="images/icons/favicon.ico" alt="" class="brand-image img-circle elevation-3 bg-white" style="opacity: .8" />--%>
+                            <span class="brand-text font-weight-light"><strong>DİTİB ANASAYFA</strong></span>
+                        </a>
+
+                        <!-- Sidebar -->
+                        <div class="sidebar">
+                            <!-- Sidebar user panel (optional) -->
+                            <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                                <div class="image">
+                                    <img src="images/ussericon.png" class="img-circle elevation-2" alt="User Image" />
+                                </div>
+                                <div class="info d-flex justify-content-between align-items-center mb-3">
+                                    <a href="#" class="d-block">
+                                        <asp:Label ID="lblKullanici" runat="server" Text=""></asp:Label></a>
+                                    <a href="Login.aspx?Logout=1" class="d-block"><i class="fas fa-window-close" style="color: white; padding-left: 50px;"></i></a>
+                                </div>
+
+                            </div>
+
+                            <!-- Sidebar Menu -->
+                            <nav class="mt-2">
+
+                                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+
+                                    <li id="btnSiparis" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-cart-arrow-down"></i>
+                                            <p>
+                                                Seyahatler               
+                                       <%-- <i class="fas fa-angle-left right"></i>--%>
+                                            </p>
+                                        </a>
+                                    <%--    <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li id="btnYeniSiparis" runat="server" class="nav-item">
+                                                <a href="siparis-girisi.aspx" class="nav-link">
+                                                    <i class="fas fa-cart-plus nav-icon"></i>
+                                                    <p>Sipariş Girişi</p>
+                                                </a>
+                                            </li>
+
+                                             <li id="btnExcelSiparis" runat="server" class="nav-item" visible="false">
+                                                <a href="excel-siparis-yukleme.aspx" class="nav-link">
+                                                    <i class="fas fa-file-excel nav-icon"></i>
+                                                    <p>Sipariş Girişi (.xlsx) </p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="onay-bekleyen-siparislerim.aspx" class="nav-link">
+                                                    <i class="fas fa-dolly nav-icon"></i>
+                                                    <p>Onay Bekleyen Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a href="tum-siparisler.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Tüm Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                            <li id="btnDetayliSiparis" runat="server" class="nav-item">
+                                                <a href="tum-detayli-siparisler.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Tüm Detaylı Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                            <li id="btnSiparisIzleme" runat="server" class="nav-item">
+                                                <a href="siparis-izleme.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Sipariş İzleme</p>
+                                                </a>
+                                            </li>
+
+                                            <li id="btnFinansOnayliSiparisler" runat="server" class="nav-item" visible="false">
+                                                <a href="finans-onayli-siparisler.aspx" class="nav-link">
+                                                    <i class="fas fa-shopping-cart nav-icon"></i>
+                                                    <p>Finans Onayli Siparişler</p>
+                                                </a>
+                                            </li>
+
+                                        </ul>--%>
+                                    </li>
+
+                                    <li id="btnKullanici" runat="server" class="nav-item has-treeview">
+                                        <a href="#" class="nav-link">
+                                            <i class="nav-icon fas fa-user-tie"></i>
+                                            <p>
+                                                Kullanıcı Yönetimi
+               
+                                        <i class="fas fa-angle-left right"></i>
+                                            </p>
+                                        </a>
+                                        <ul class="nav nav-treeview" style="margin-left: 10px;">
+                                            <li class="nav-item">
+                                                <a href="sifre-degistir.aspx" class="nav-link">
+                                                    <i class="fas fa-key nav-icon"></i>
+                                                    <p>Şifre Değiştir</p>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </li>
+
+                                    <li id="btnLog" runat="server" class="nav-item has-treeview">
+                                        <a href="tum-loglar.aspx" class="nav-link">
+                                            <i class="nav-icon fas fa-mouse nav-icon"></i>
+                                            <p>
+                                                Log
+              
+                                            </p>
+                                        </a>
+                                    </li>
+
+                                </ul>
+
+                            </nav>
+                            <!-- /.sidebar-menuuuuuuuuuuu -->
+                        </div>
+                        <!-- /.sidebar -->
+                    </aside>
+
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+
+                    <!-- Control Sidebar -->
+                    <aside class="control-sidebar control-sidebar-dark">
+                        <!-- Control sidebar content goes here -->
+                    </aside>
+                    <!-- /.control-sidebar -->
+
+                    <!-- Main Footer -->
+                    <footer class="main-footer">
+                        <strong>
+                        
+
+                        <div class="float-right d-none d-sm-inline-block">
+                            <b>Copyright 2023 DİTİB - All rights reserved. Version</b> 1.0.0. BETA
+   
+                        </div>
+
+                                </strong>
+                    </footer>
+
+
+
                 </div>
-                <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="container body-content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
-            </footer>
-        </div>
+
+            </ContentTemplate>
+        </asp:UpdatePanel>
 
     </form>
 </body>

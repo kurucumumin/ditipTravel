@@ -1,0 +1,1623 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="PortB2B" Class="vtDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=94.101.86.18;Initial Catalog=PortB2B;Persist Security Info=True;User ID=sa;MultipleActiveResultSets=True;Connect Timeout=900" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="PortB2BConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.BayiAltKullanicilar" Member="BayiAltKullanicilars">
+    <Type Name="BayiAltKullanicilar">
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MasterKullaniciID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KullaniciAdi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="KullaniciSoyAdi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sifre" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RolID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Uid" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="eposta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="smsKod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="smsKodTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Gimer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Destek" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OdemeIslemleri" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TemlikPrimRaporu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FinansRaporu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FiyatListesi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SiparisIslemleriniGorme" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SiparisIslemleriniEkleme" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="kullaniciTipi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="BayiSubeKullanicilar_BayiAltKullanicilar" Member="BayiSubeKullanicilar" ThisKey="MasterKullaniciID" OtherKey="KullaniciID" Type="BayiSubeKullanicilar" IsForeignKey="true" />
+      <Association Name="BayiSubeKullaniciRoller_BayiAltKullanicilar" Member="BayiSubeKullaniciRoller" ThisKey="RolID" OtherKey="RolID" Type="BayiSubeKullaniciRoller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BayiBazliUrunler" Member="BayiBazliUrunlers">
+    <Type Name="BayiBazliUrunler">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="BAYIKODU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Bayiler" Member="Bayilers">
+    <Type Name="Bayiler">
+      <Column Name="BayiID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiTanim" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="BayiTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiLogoCariKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CrmKullaniciID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CrmSyKullaniciID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Il" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Ilce" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BayiSahibiAdi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BayiSahibiTel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="YetkiliAdi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="YetkiliTel" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="BayiMail" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="[Not]" Member="Not" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Aktif" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Bayiler_BayiSubeler" Member="BayiSubelers" ThisKey="BayiID" OtherKey="BayiID" Type="BayiSubeler" />
+      <Association Name="CrmKullanicilar_Bayiler" Member="CrmKullanicilar" ThisKey="CrmKullaniciID" OtherKey="ID" Type="CrmKullanicilar" IsForeignKey="true" />
+      <Association Name="CrmKullanicilar_Bayiler1" Member="CrmKullanicilar1" ThisKey="CrmSyKullaniciID" OtherKey="ID" Type="CrmKullanicilar" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BayiSubeKullanicilar" Member="BayiSubeKullanicilars">
+    <Type Name="BayiSubeKullanicilar">
+      <Column Name="KullaniciID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SubeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="KullaniciAdi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Sifre" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="RolID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Uid" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="eposta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="smsKod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="smsKodTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KullaniciSoyAdi" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kullaniciTipi" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="BayiSubeKullanicilar_BayiAltKullanicilar" Member="BayiAltKullanicilars" ThisKey="KullaniciID" OtherKey="MasterKullaniciID" Type="BayiAltKullanicilar" />
+      <Association Name="BayiSubeKullaniciRoller_BayiSubeKullanicilar" Member="BayiSubeKullaniciRoller" ThisKey="RolID" OtherKey="RolID" Type="BayiSubeKullaniciRoller" IsForeignKey="true" />
+      <Association Name="BayiSubeler_BayiSubeKullanicilar" Member="BayiSubeler" ThisKey="SubeID" OtherKey="SubeID" Type="BayiSubeler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BayiSubeKullaniciRoller" Member="BayiSubeKullaniciRollers">
+    <Type Name="BayiSubeKullaniciRoller">
+      <Column Name="RolID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="RolKod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RolAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RolAciklamasi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Gimer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Destek" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OdemeIslemleri" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TemlikPrimRaporu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FinansRaporu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FiyatListesi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SiparisIslemleriniGorme" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SiparisIslemleriniEkleme" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="BayiSubeKullaniciRoller_BayiAltKullanicilar" Member="BayiAltKullanicilars" ThisKey="RolID" OtherKey="RolID" Type="BayiAltKullanicilar" />
+      <Association Name="BayiSubeKullaniciRoller_BayiSubeKullanicilar" Member="BayiSubeKullanicilars" ThisKey="RolID" OtherKey="RolID" Type="BayiSubeKullanicilar" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BayiSubeler" Member="BayiSubelers">
+    <Type Name="BayiSubeler">
+      <Column Name="SubeID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BayiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SubeTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubeTanim" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubeUnvan" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SubeAdres" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="SubeTel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VergiDairesi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VergiNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SubeMail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="BayiSubeler_BayiSubeKullanicilar" Member="BayiSubeKullanicilars" ThisKey="SubeID" OtherKey="SubeID" Type="BayiSubeKullanicilar" />
+      <Association Name="Bayiler_BayiSubeler" Member="Bayiler" ThisKey="BayiID" OtherKey="BayiID" Type="Bayiler" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CrmKullanicilar" Member="CrmKullanicilars">
+    <Type Name="CrmKullanicilar">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="KullaniciAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Sifre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Soyadi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RolID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="YoneticiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="eposta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="CrmKullanicilar_Bayiler" Member="Bayilers" ThisKey="ID" OtherKey="CrmKullaniciID" Type="Bayiler" />
+      <Association Name="CrmKullanicilar_Bayiler1" Member="Bayilers1" ThisKey="ID" OtherKey="CrmSyKullaniciID" Type="Bayiler" />
+      <Association Name="CRMKullaniciRoller_CrmKullanicilar" Member="CRMKullaniciRoller" ThisKey="RolID" OtherKey="ID" Type="CRMKullaniciRoller" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CRMKullaniciRoller" Member="CRMKullaniciRollers">
+    <Type Name="CRMKullaniciRoller">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Kod" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="CRMKullaniciRoller_CrmKullanicilar" Member="CrmKullanicilars" ThisKey="ID" OtherKey="RolID" Type="CrmKullanicilar" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DestekKayitlari" Member="DestekKayitlaris">
+    <Type Name="DestekKayitlari">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TalepID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mesaj" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MesajTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MesajYonu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CssStyleDosyası" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="CssStyleDosyası2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="DestekTalepleri_DestekKayitlari" Member="DestekTalepleri" ThisKey="TalepID" OtherKey="ID" Type="DestekTalepleri" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DestekKonulari" Member="DestekKonularis">
+    <Type Name="DestekKonulari">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DestekTalepleri" Member="DestekTalepleris">
+    <Type Name="DestekTalepleri">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Icerik" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Durum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Kapali" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KapanmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CssStyleDosyası" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Konu" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Association Name="DestekTalepleri_DestekKayitlari" Member="DestekKayitlaris" ThisKey="ID" OtherKey="TalepID" Type="DestekKayitlari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Duyurular" Member="Duyurulars">
+    <Type Name="Duyurular">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Konu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IzinsizUrunler" Member="IzinsizUrunlers">
+    <Type Name="IzinsizUrunler">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KartOdemeleri" Member="KartOdemeleris">
+    <Type Name="KartOdemeleri">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="b2bKullanici" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="OdemeAciklamasi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="OdemeTutari" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="OdemeTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Log]" Member="Logs">
+    <Type Name="Log">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Modul" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mesaj" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IslemTipi" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="IslemAciklamasi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mail" Member="Mails">
+    <Type Name="Mail">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AdSoyad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Departman" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MailAdres" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MarsSiparisBilgisi" Member="MarsSiparisBilgisis">
+    <Type Name="MarsSiparisBilgisi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="StarDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WareHouse" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaxRecords" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Transaction_Title" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Transaction_Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Transaction_Time" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Transaction_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Transaction_Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="WorkOrderNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirmId" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Consigment_Note_Nuımber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Consigment_Note_Date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InvoiceNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InvoiceDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PlateNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionReasonCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionReasonExplanation" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InsertTime" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="InsertUser" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Cancel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CustomerOrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SpecialCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AuthorizationCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DriverName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransportatransCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveryDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveredBy" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveredTo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="isPurchase" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoIrsaliye" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoIrsaliyeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FinansOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FinansOnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="MarsSiparisBilgisi_MarsSiparisSatirlari" Member="MarsSiparisSatirlaris" ThisKey="ID" OtherKey="MarsSiparisBilgiID" Type="MarsSiparisSatirlari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MarsSiparisSatirlari" Member="MarsSiparisSatirlaris">
+    <Type Name="MarsSiparisSatirlari">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MarsSiparisBilgiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TransactionTitle" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransactionLineNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaterialCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaterialName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Barcode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Unit" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderLineNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Line_No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PalletNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SpecialCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BestBefore" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderEvrakTip" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Pl3DetailOrderNum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LogisticsServiceProvider" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Serials" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="MarsSiparisBilgisi_MarsSiparisSatirlari" Member="MarsSiparisBilgisi" ThisKey="MarsSiparisBilgiID" OtherKey="ID" Type="MarsSiparisBilgisi" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Mesaj" Member="Mesajs">
+    <Type Name="Mesaj">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GonderilenKisi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Konu" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Icerik" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OmniOrderRows" Member="OmniOrderRows">
+    <Type Name="OmniOrderRow">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="OmniOrderID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="OmniOrder_OmniOrderRow" Member="OmniOrder" ThisKey="OmniOrderID" OtherKey="ID" Type="OmniOrder" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OmniOrders" Member="OmniOrders">
+    <Type Name="OmniOrder">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OperationType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveryType" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NameSurname" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TCKN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DealerCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DeliveryAddress" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Cancel" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CancelReason" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CancelDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="OmniOrder_OmniOrderRow" Member="OmniOrderRows" ThisKey="ID" OtherKey="OmniOrderID" Type="OmniOrderRow" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OmtBazliUrunler" Member="OmtBazliUrunlers">
+    <Type Name="OmtBazliUrunler">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="OMTID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Roller" Member="Rollers">
+    <Type Name="Roller">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SatinAlma" Member="SatinAlmas">
+    <Type Name="SatinAlma">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RedSebebi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RedTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FirmaKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirmaAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarsBilgi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsBilgiTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sil" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SilTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taslak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoSiparisTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="SatinAlma_SatinAlmaSatir" Member="SatinAlmaSatirs" ThisKey="ID" OtherKey="SatinAlmaID" Type="SatinAlmaSatir" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SatinAlmaSatir" Member="SatinAlmaSatirs">
+    <Type Name="SatinAlmaSatir">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SatinAlmaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaliyetFiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KdvOrani" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Kdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="DepoyaGelenMiktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="SatinAlma_SatinAlmaSatir" Member="SatinAlma" ThisKey="SatinAlmaID" OtherKey="ID" Type="SatinAlma" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Sayfa4$" Member="Sayfa4_s">
+    <Type Name="Sayfa4_">
+      <Column Name="id" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="bayikodu" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="bayiTucariUnvan" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="mobil" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="pass" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="rol" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="tipi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServisMarkaSeriler" Member="ServisMarkaSerilers">
+    <Type Name="ServisMarkaSeriler">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Seri" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ServisCheck" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ServisAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisSatirTemp" Member="SiparisSatirTemps">
+    <Type Name="SiparisSatirTemp">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaliyetFiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KdvOrani" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Kdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="EanKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepoyaGelenMiktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisNoTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TIG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeGrubu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SiparisTemp_SiparisSatirTemp" Member="SiparisTemp" ThisKey="SiparisID" OtherKey="ID" Type="SiparisTemp" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisUrunSerileri" Member="SiparisUrunSerileris">
+    <Type Name="SiparisUrunSerileri">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="siparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="urunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Serial" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.StokKontrolu" Member="StokKontrolus">
+    <Type Name="StokKontrolu">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Kontrol" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrunTransferleri" Member="UrunTransferleris">
+    <Type Name="UrunTransferleri">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TransferCariKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoFicheRef" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogoTrCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsGonderimTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="UrunTransferleri_UrunTransferSatirlari" Member="UrunTransferSatirlaris" ThisKey="ID" OtherKey="UrunTransferID" Type="UrunTransferSatirlari" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrunTransferSatirlari" Member="UrunTransferSatirlaris">
+    <Type Name="UrunTransferSatirlari">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunTransferID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EanKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nmu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UrunTransferleri_UrunTransferSatirlari" Member="UrunTransferleri" ThisKey="UrunTransferID" OtherKey="ID" Type="UrunTransferleri" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.WebServisKullanicilar" Member="WebServisKullanicilars">
+    <Type Name="WebServisKullanicilar">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VerilenYer" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.BayiMusteriTemsilcisiAtama" Member="BayiMusteriTemsilcisiAtamas">
+    <Type Name="BayiMusteriTemsilcisiAtama">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Adi" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="RolAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="eposta" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="YoneticiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LogoStokMiktarlari" Member="LogoStokMiktarlaris">
+    <Type Name="LogoStokMiktarlari">
+      <Column Name="CODE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RezerveStokMiktarlari" Member="RezerveStokMiktarlaris">
+    <Type Name="RezerveStokMiktarlari">
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewFaturalanmamisSiparisTutar" Member="viewFaturalanmamisSiparisTutars">
+    <Type Name="viewFaturalanmamisSiparisTutar">
+      <Column Name="BAKIYE" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ID" Type="System.String" DbType="NVarChar(34)" CanBeNull="true" />
+      <Column Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewFaturaUrunBirimTutar" Member="viewFaturaUrunBirimTutars">
+    <Type Name="viewFaturaUrunBirimTutar">
+      <Column Name="PRICE" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="code" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="FICHENO" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="DOCTRACKINGNR" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewFinansOnayBekleyenSatinAlmalar" Member="viewFinansOnayBekleyenSatinAlmalars">
+    <Type Name="viewFinansOnayBekleyenSatinAlmalar">
+      <Column Name="CustomerOrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirmaKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirmaAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewIadeImeiRapor" Member="viewIadeImeiRapors">
+    <Type Name="viewIadeImeiRapor">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewLogoIrsaliye" Member="viewLogoIrsaliyes">
+    <Type Name="viewLogoIrsaliye">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="LogoIrsaliye" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewMarsBilgi" Member="viewMarsBilgis">
+    <Type Name="viewMarsBilgi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MarsBilgi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewSAP" Member="viewSAPs">
+    <Type Name="viewSAP">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SAP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewSipariseUygunUrunler" Member="viewSipariseUygunUrunlers">
+    <Type Name="viewSipariseUygunUrunler">
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewSiparisIzlemeSorgusuMain" Member="viewSiparisIzlemeSorgusuMains">
+    <Type Name="viewSiparisIzlemeSorgusuMain">
+      <Column Name="SiparisNo" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarsBilgi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsBilgiTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="LogoIrsaliye" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SAP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TAXIM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewStokLogo" Member="viewStokLogos">
+    <Type Name="viewStokLogo">
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewStokLogoSiparis" Member="viewStokLogoSiparis">
+    <Type Name="viewStokLogoSipari">
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewTAXIM" Member="viewTAXIMs">
+    <Type Name="viewTAXIM">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TAXIM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewTumSiparisMain" Member="viewTumSiparisMains">
+    <Type Name="viewTumSiparisMain">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FaturalanmaDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewYeniStokLogo" Member="viewYeniStokLogos">
+    <Type Name="viewYeniStokLogo">
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="STOK" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrunYonetimi" Member="UrunYonetimis">
+    <Type Name="UrunYonetimi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Kategori" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Marka" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CRM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="B2B" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Alokasyon" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FizikiStok" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="RezerveAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SanalStokAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisStok" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Siparis" Member="Siparis">
+    <Type Name="Sipari">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RedSebebi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RedTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="omtOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtHeadOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="finansOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="satisSiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="omtHeadOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="finansOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoBayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TelekomSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtYoneticiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DokumanPath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Taslak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoSiparisTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OnaylayanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansAtamaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinansAtamaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiLimit" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansOnayGUID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansaDusmeDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="B2B" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Iade" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IadeTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Sipari_SiparisSatir" Member="SiparisSatirs" ThisKey="ID" OtherKey="SiparisID" Type="SiparisSatir" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisTemp" Member="SiparisTemps">
+    <Type Name="SiparisTemp">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RedSebebi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RedTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="omtOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtHeadOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="finansOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="satisSiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="omtHeadOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="finansOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoBayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TelekomSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtYoneticiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DokumanPath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Taslak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoSiparisTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OnaylayanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ParcalanmaDurumu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SiparisTemp_SiparisSatirTemp" Member="SiparisSatirTemps" ThisKey="ID" OtherKey="SiparisID" Type="SiparisSatirTemp" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisSatir2" Member="SiparisSatir2s">
+    <Type Name="SiparisSatir2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaliyetFiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KdvOrani" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Kdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="EanKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepoyaGelenMiktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisNoTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TIG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeGrubu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Siparis2_SiparisSatir2" Member="Siparis2" ThisKey="SiparisID" OtherKey="ID" Type="Siparis2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Siparis2" Member="Siparis2s">
+    <Type Name="Siparis2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RedSebebi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RedTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="omtOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtHeadOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="finansOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="satisSiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="omtHeadOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="finansOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoBayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TelekomSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtYoneticiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DokumanPath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Taslak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoSiparisTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OnaylayanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansAtamaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinansAtamaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiLimit" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansOnayGUID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansaDusmeDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="B2B" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Iade" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="IadeTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Siparis2_SiparisSatir2" Member="SiparisSatir2s" ThisKey="ID" OtherKey="SiparisID" Type="SiparisSatir2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisSatirTemp2" Member="SiparisSatirTemp2s">
+    <Type Name="SiparisSatirTemp2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaliyetFiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KdvOrani" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Kdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="EanKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepoyaGelenMiktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisNoTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TIG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeGrubu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="SiparisTemp2_SiparisSatirTemp2" Member="SiparisTemp2" ThisKey="SiparisID" OtherKey="ID" Type="SiparisTemp2" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisTemp2" Member="SiparisTemp2s">
+    <Type Name="SiparisTemp2">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RedSebebi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RedTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="omtOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtHeadOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="finansOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="satisSiparisDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="omtHeadOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="finansOnayTarihi" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoBayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TelekomSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtYoneticiID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DokumanPath" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Taslak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoSiparisTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="OnaylayanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansOnayGUID" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansAtamaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinansAtamaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiLimit" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ParcalanmaDurumu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="SiparisTemp2_SiparisSatirTemp2" Member="SiparisSatirTemp2s" ThisKey="ID" OtherKey="SiparisID" Type="SiparisSatirTemp2" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewImeiRapor" Member="viewImeiRapors">
+    <Type Name="viewImeiRapor">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IrsaliyeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FisNo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="OmtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewUrunYonetimi" Member="viewUrunYonetimis">
+    <Type Name="viewUrunYonetimi">
+      <Column Name="CODE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="TIG" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="KATEGORI" Type="System.String" DbType="VarChar(41)" CanBeNull="true" />
+      <Column Name="MARKA" Type="System.String" DbType="VarChar(121)" CanBeNull="true" />
+      <Column Name="CRM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="B2B" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Alokasyon" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="RezerveAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SanalStokAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisStok" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PopupB2B" Member="PopupB2Bs">
+    <Type Name="PopupB2B">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Aktif" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GUIDvalue" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="FotoUrl" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewTumSiparisler" Member="viewTumSiparislers">
+    <Type Name="viewTumSiparisler">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="MarsKismi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaturalanmaDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FaturaNumarası" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OmtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SyID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="B2B" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.DetayliSiparisRaporu" Member="DetayliSiparisRaporus">
+    <Type Name="DetayliSiparisRaporu">
+      <Column Name="SiNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="No" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="NAME3" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+      <Column Name="satisSiparisDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsKismi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="B2B" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewBekleyenSiparisler" Member="viewBekleyenSiparislers">
+    <Type Name="viewBekleyenSiparisler">
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNumarasi" Type="System.String" DbType="NVarChar(34)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SiparisSatir" Member="SiparisSatirs">
+    <Type Name="SiparisSatir">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MaliyetFiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KdvOrani" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Kdv" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="EanKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepoyaGelenMiktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisNoTemp" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TIG" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeGrubu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Iptal" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Sipari_SiparisSatir" Member="Sipari" ThisKey="SiparisID" OtherKey="ID" Type="Sipari" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewMarsSiparis" Member="viewMarsSiparis">
+    <Type Name="viewMarsSipari">
+      <Column Name="SipID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SiparisNo" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="MarsBilgi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Iade" Member="Iades">
+    <Type Name="Iade">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Logo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Sap" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SapTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Taxim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TaximTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="RedSebebi" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="RedTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoIade" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="LogoIadeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoBayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IadeDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Taslak" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TelekomIadeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="omtHeadID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="omtOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtHeadOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="omtOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="omtHeadOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaturaNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SAPSistemOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SAPSistemOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="TemlikOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TemlikOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="MuhasebeOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MuhasebeOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UrunYonetimiOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="UrunYonetimiOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DepoOnay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DepoOnayTarih" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IadeMod" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Association Name="Iade_IadeSatir" Member="IadeSatirs" ThisKey="ID" OtherKey="IadeID" Type="IadeSatir" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewIadeUrunPopup" Member="viewIadeUrunPopups">
+    <Type Name="viewIadeUrunPopup">
+      <Column Name="Kod" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OrderNumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OmtBazliDagilimListesi" Member="OmtBazliDagilimListesis">
+    <Type Name="OmtBazliDagilimListesi">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Limit" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CrmKullanici" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.IadeSatir" Member="IadeSatirs">
+    <Type Name="IadeSatir">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IadeID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="EanKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="DepoyaGelenMiktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fiyat" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Aktivasyon" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FF" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DigerPrim" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Iade_IadeSatir" Member="Iade" ThisKey="IadeID" OtherKey="ID" Type="Iade" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UrunOzellikTablosu" Member="UrunOzellikTablosus">
+    <Type Name="UrunOzellikTablosu">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Kategori" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Marka" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Model" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Renk" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklama" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="EkranBoyutu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MegapikselKamera" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="DahiliHafiza" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Aktif" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TanitimYazilari" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.viewVadeFarklariSatirlari" Member="viewVadeFarklariSatirlaris">
+    <Type Name="viewVadeFarklariSatirlari">
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="VadeFarklariID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Donem" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CariHesapKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CariHesapAdi" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ModulAdi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="HareketTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IslemTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="VadeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Toplam" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="KarsiHareketTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KarsiVadeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="KarsiHareketTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KarsiHareketFisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeGun" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Durum" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TicariIslemAciklamasi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KarsiTigAciklamasi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeFarkiGun" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="VadeFarkiKDVDahil" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.prc_BayiBazliUrunler" Method="prc_BayiBazliUrunler">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_BayiBazliUrunlerResult">
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_bayiKodlari" Method="prc_bayiKodlari">
+    <ElementType Name="prc_bayiKodlariResult">
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_borcTutari" Method="prc_borcTutari">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_borcTutariResult">
+      <Column Name="Tutar" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_faturalanmamisSiparisTutari" Method="prc_faturalanmamisSiparisTutari">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_faturalanmamisSiparisTutariResult">
+      <Column Name="BAKIYE" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ID" Type="System.String" DbType="NVarChar(34)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_faturalanmamisTutar" Method="prc_faturalanmamisTutar">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_faturalanmamisTutarResult">
+      <Column Name="BAKIYE" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ID" Type="System.String" DbType="NVarChar(34)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_finansOnayliSiparisler" Method="prc_finansOnayliSiparisler">
+    <ElementType Name="prc_finansOnayliSiparislerResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="FinansAtamaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FinansAtamaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="BayiLimit" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FinansaDusmeDurumu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_IadeImeiRapor" Method="prc_IadeImeiRapor">
+    <ElementType Name="prc_IadeImeiRaporResult">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_ImeiRapor" Method="prc_ImeiRapor">
+    <ElementType Name="prc_ImeiRaporResult">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IrsaliyeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FisNo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_ImeiRaporOmtBazli" Method="prc_ImeiRaporOmtBazli">
+    <Parameter Name="crmKullaniciID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="prc_ImeiRaporOmtBazliResult">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IrsaliyeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FisNo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_ImeiRaporSyBazli" Method="prc_ImeiRaporSyBazli">
+    <Parameter Name="crmKullaniciID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="prc_ImeiRaporSyBazliResult">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="SiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IrsaliyeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FisNo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiSubeKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NMU" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_MarstanDonenMiktar" Method="prc_MarstanDonenMiktar">
+    <Parameter Name="urunKodu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="miktar" Type="System.Int32" DbType="Int" />
+    <Parameter Name="siparisNo" Type="System.String" DbType="NVarChar(30)" />
+    <ElementType Name="prc_MarstanDonenMiktarResult">
+      <Column Name="Quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_OmtBazliUrunler" Method="prc_OmtBazliUrunler">
+    <Parameter Name="crmKullaniciID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="prc_OmtBazliUrunlerResult">
+      <Column Name="CODE" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_SiparisSatirUrunFiyati" Method="prc_SiparisSatirUrunFiyati">
+    <Parameter Name="siparisNo" Type="System.String" DbType="NVarChar(30)" />
+    <ElementType Name="prc_SiparisSatirUrunFiyatiResult">
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Fiyati" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_Stok" Method="prc_Stok">
+    <ElementType Name="prc_StokResult">
+      <Column Name="CODE" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="NAME" Type="System.String" DbType="VarChar(51)" CanBeNull="true" />
+      <Column Name="MIKTAR" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="STOK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="FIYAT" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="MARKA" Type="System.String" DbType="VarChar(121)" CanBeNull="true" />
+      <Column Name="KATEGORI" Type="System.String" DbType="VarChar(201)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_teminatMektubu" Method="prc_teminatMektubu">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_teminatMektubuResult">
+      <Column Name="Tutar" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_toplamBorc" Method="prc_toplamBorc">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_toplamBorcResult">
+      <Column Name="BAKIYE" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_toplamBorcTutari" Method="prc_toplamBorcTutari">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <ElementType Name="prc_toplamBorcTutariResult">
+      <Column Name="BAKIYE" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumBayilerKrediTutarlari" Method="prc_tumBayilerKrediTutarlari">
+    <ElementType Name="prc_tumBayilerKrediTutarlariResult">
+      <Column Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiTanim" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="ToplamBorcTutari" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="FaturalanmisSiparisTutari" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ToplamKrediLimit" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="KullanilabilirLimit" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="ToplamOnOdeme" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="TeminatMektubu" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="PortASKrediLimiti" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSatinAlmalar" Method="prc_tumSatinAlmalar">
+    <ElementType Name="prc_tumSatinAlmalarResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirmaKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirmaAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SatinAlmaOnay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarsUrunKabul" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="PortLojistikOnay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UrunSatisaHazir" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ToplamAdetMars" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSatinAlmalar2" Method="prc_tumSatinAlmalar2">
+    <ElementType Name="prc_tumSatinAlmalar2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FirmaKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FirmaAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="GuncelleyenKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuncellemeTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SatinAlmaOnay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="MarsUrunKabul" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="PortLojistikOnay" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UrunSatisaHazir" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ToplamAdetMars" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSiparisler" Method="prc_tumSiparisler">
+    <ElementType Name="prc_tumSiparislerResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="MarsKismi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaturalanmaDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FaturaNumarası" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSiparisler2" Method="prc_tumSiparisler2">
+    <ElementType Name="prc_tumSiparisler2Result">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="MarsKismi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaturalanmaDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FaturaNumarası" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSiparislerMarsAdet" Method="prc_tumSiparislerMarsAdet">
+    <Parameter Name="siparisID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="prc_tumSiparislerMarsAdetResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="SiparisID" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="GUID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="UrunAciklamasi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="GidenMiktar" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSiparislerOmt" Method="prc_tumSiparislerOmt">
+    <Parameter Name="crmKullaniciID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="prc_tumSiparislerOmtResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="MarsKismi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaturalanmaDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FaturaNumarası" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_tumSiparislerSy" Method="prc_tumSiparislerSy">
+    <Parameter Name="crmKullaniciID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="prc_tumSiparislerSyResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturanKisi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SiparisDurum" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(38,4)" CanBeNull="true" />
+      <Column Name="MarsKismi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ToplamAdet" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TeslimatAdresi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Aciklama" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="OlusturmaTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsDetay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="odemeKaydiTipi" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FaturalanmaDurumu" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="FaturaNumarası" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TopluSiparisNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SiparisIzleme" Method="SiparisIzleme">
+    <Parameter Name="bayiKodu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="siparisID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="SiparisIzlemeResult">
+      <Column Name="IMEI" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UrunKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MarkaModel" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="IrsaliyeNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FisNo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.SiparisIzlemeSorgusuMain" Method="SiparisIzlemeSorgusuMain">
+    <ElementType Name="SiparisIzlemeSorgusuMainResult">
+      <Column Name="SiparisNo" Type="System.String" DbType="VarChar(34)" CanBeNull="true" />
+      <Column Name="BayiKodu" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BayiAdi" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Onay" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Mars" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="OnayTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="LogoSiparis" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Tutar" Type="System.Decimal" DbType="Decimal(20,4)" CanBeNull="true" />
+      <Column Name="omtID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="syID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MarsBilgi" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="MarsBilgiTarih" Type="System.String" DbType="NVarChar(101)" CanBeNull="true" />
+      <Column Name="LogoIrsaliye" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SAP" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="TAXIM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Red" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="KargoTakipNo" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="TeslimTuru" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="KargoTakipNoTarih" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.prc_gunlukSatilanUrunMiktari" Method="prc_gunlukSatilanUrunMiktari">
+    <Parameter Name="urunKodu" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="olusturanKisi" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="baslangicTarih" Type="System.String" DbType="NVarChar(100)" />
+    <Parameter Name="bitisTarih" Type="System.String" DbType="NVarChar(100)" />
+    <ElementType Name="prc_gunlukSatilanUrunMiktariResult">
+      <Column Name="Miktar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>
