@@ -204,6 +204,7 @@
     <Content Include="dist\css\alt\adminlte.plugins.min.css.map" />
     <Content Include="dist\js\adminlte.js.map" />
     <Content Include="dist\js\adminlte.min.js.map" />
+    <Content Include="images\ditib_logo.jpg" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="plugins\bootstrap\js\bootstrap.js.map" />
