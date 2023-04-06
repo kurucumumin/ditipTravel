@@ -173,6 +173,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="frm_allTravel.aspx" />
+    <Content Include="frm_Login.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -205,6 +206,7 @@
     <Content Include="dist\js\adminlte.js.map" />
     <Content Include="dist\js\adminlte.min.js.map" />
     <Content Include="images\ditib_logo.jpg" />
+    <Content Include="images\ditib_logo2.jpg" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.js.map" />
     <Content Include="plugins\bootstrap\js\bootstrap.bundle.min.js.map" />
     <Content Include="plugins\bootstrap\js\bootstrap.js.map" />
@@ -392,6 +394,13 @@
     </Compile>
     <Compile Include="frm_allTravel.aspx.designer.cs">
       <DependentUpon>frm_allTravel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Login.aspx.cs">
+      <DependentUpon>frm_Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frm_Login.aspx.designer.cs">
+      <DependentUpon>frm_Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

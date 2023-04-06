@@ -100,7 +100,7 @@
                                 <div class="info d-flex justify-content-between align-items-center mb-3">
                                     <a href="#" class="d-block">
                                         <asp:Label ID="lblKullanici" runat="server" Text=""></asp:Label></a>
-                                    <a href="Login.aspx?Logout=1" class="d-block"><i class="fas fa-window-close" style="color: white; padding-left: 50px;"></i></a>
+                                    <a href="frm_Login.aspx?Logout=1" class="d-block"><i class="fas fa-window-close" style="color: white; padding-left: 50px;"></i></a>
                                 </div>
 
                             </div>
