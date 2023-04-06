@@ -30,6 +30,9 @@ namespace ditipTravel
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void Inserttbl_User(tbl_User instance);
+    partial void Updatetbl_User(tbl_User instance);
+    partial void Deletetbl_User(tbl_User instance);
     #endregion
 		
 		public dbDataContext() : 
@@ -62,37 +65,41 @@ namespace ditipTravel
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<tbl_Person> tbl_Persons
+		public System.Data.Linq.Table<tbl_Travel> tbl_Travels
 		{
 			get
 			{
-				return this.GetTable<tbl_Person>();
+				return this.GetTable<tbl_Travel>();
+			}
+		}
+		
+		public System.Data.Linq.Table<tbl_User> tbl_Users
+		{
+			get
+			{
+				return this.GetTable<tbl_User>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Person")]
-	public partial class tbl_Person
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Travels")]
+	public partial class tbl_Travel
 	{
 		
-		private short _id;
+		private int _id;
 		
 		private string _name;
 		
 		private string _surname;
 		
-		private string _username;
+		private string _address;
 		
-		private string _password;
-		
-		private System.Nullable<bool> _status;
-		
-		public tbl_Person()
+		public tbl_Travel()
 		{
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="SmallInt NOT NULL IDENTITY", IsDbGenerated=true)]
-		public short id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
@@ -139,7 +146,125 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NChar(250)")]
+		public string address
+		{
+			get
+			{
+				return this._address;
+			}
+			set
+			{
+				if ((this._address != value))
+				{
+					this._address = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_User")]
+	public partial class tbl_User : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _name;
+		
+		private string _surname;
+		
+		private string _username;
+		
+		private string _password;
+		
+		private System.Nullable<bool> _status;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnsurnameChanging(string value);
+    partial void OnsurnameChanged();
+    partial void OnusernameChanging(string value);
+    partial void OnusernameChanged();
+    partial void OnpasswordChanging(string value);
+    partial void OnpasswordChanged();
+    partial void OnstatusChanging(System.Nullable<bool> value);
+    partial void OnstatusChanged();
+    #endregion
+		
+		public tbl_User()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NVarChar(255)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_surname", DbType="NVarChar(255)")]
+		public string surname
+		{
+			get
+			{
+				return this._surname;
+			}
+			set
+			{
+				if ((this._surname != value))
+				{
+					this.OnsurnameChanging(value);
+					this.SendPropertyChanging();
+					this._surname = value;
+					this.SendPropertyChanged("surname");
+					this.OnsurnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(255)")]
 		public string username
 		{
 			get
@@ -150,12 +275,16 @@ namespace ditipTravel
 			{
 				if ((this._username != value))
 				{
+					this.OnusernameChanging(value);
+					this.SendPropertyChanging();
 					this._username = value;
+					this.SendPropertyChanged("username");
+					this.OnusernameChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_password", DbType="NVarChar(255)")]
 		public string password
 		{
 			get
@@ -166,7 +295,11 @@ namespace ditipTravel
 			{
 				if ((this._password != value))
 				{
+					this.OnpasswordChanging(value);
+					this.SendPropertyChanging();
 					this._password = value;
+					this.SendPropertyChanged("password");
+					this.OnpasswordChanged();
 				}
 			}
 		}
@@ -182,8 +315,32 @@ namespace ditipTravel
 			{
 				if ((this._status != value))
 				{
+					this.OnstatusChanging(value);
+					this.SendPropertyChanging();
 					this._status = value;
+					this.SendPropertyChanged("status");
+					this.OnstatusChanged();
 				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}

@@ -110,8 +110,8 @@
 
                                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                                    <li id="btnSiparis" runat="server" class="nav-item has-treeview">
-                                        <a href="#" class="nav-link">
+                                    <li id="btnTravel" runat="server" class="nav-item has-treeview">
+                                        <a href="frm_allTravel.aspx" class="nav-link">
                                             <i class="nav-icon fas fa-car"></i>
                                             <p>
                                                 Travels               
@@ -199,7 +199,7 @@
                                     </li>
 
                                     <li id="btnLog" runat="server" class="nav-item has-treeview">
-                                        <a href="tum-loglar.aspx" class="nav-link">
+                                        <a href="frm_log.aspx" class="nav-link">
                                             <i class="nav-icon fas fa-mouse nav-icon"></i>
                                             <p>
                                                 Log

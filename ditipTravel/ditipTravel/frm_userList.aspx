@@ -89,7 +89,7 @@
 
               <dx:ASPxGridView ID="ASPxGridView1" CssClass="grid" runat="server" Theme="Material" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False">
 
-                  <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" FileName="PortExcel" />
+                  <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" FileName="UserExcel" />
 
                   <SettingsAdaptivity AdaptivityMode="HideDataCellsWindowLimit" HideDataCellsAtWindowInnerWidth="800" AllowOnlyOneAdaptiveDetailExpanded="true" AdaptiveDetailColumnCount="2"></SettingsAdaptivity>
 
@@ -99,16 +99,16 @@
                   <Settings ShowHeaderFilterButton="True" />
                   <SettingsSearchPanel Visible="True" />
                    
-                  <SettingsContextMenu Enabled="true" RowMenuItemVisibility-ExportMenu-Visible="true" />
+                  <%--<SettingsContextMenu Enabled="true" RowMenuItemVisibility-ExportMenu-Visible="true" />--%>
 
 
                   <Columns>
 
                       <dx:GridViewDataTextColumn FieldName="id" VisibleIndex="0" Visible="false"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="username" VisibleIndex="1" Caption="User Name"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="password" VisibleIndex="2" Caption="Password"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="name" VisibleIndex="3" Caption="Name"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="surname" VisibleIndex="4" Caption="Surname"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="name" VisibleIndex="1" Caption="Name"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="surname" VisibleIndex="2" Caption="Surname"></dx:GridViewDataTextColumn>
+                         <dx:GridViewDataTextColumn FieldName="username" VisibleIndex="3" Caption="User Name"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="password" VisibleIndex="4" Caption="Password"></dx:GridViewDataTextColumn>
                        <dx:GridViewDataCheckColumn FieldName="status" Caption="Status" VisibleIndex="5"></dx:GridViewDataCheckColumn>
                   </Columns>
 

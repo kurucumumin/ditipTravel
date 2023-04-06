@@ -35,9 +35,9 @@ namespace ditipTravel
                 ASPxGridView1.SettingsPopup.HeaderFilter.Height = 320;
             }
 
-            if (Session["tbl_Person"] != null)
+            if (Session["tbl_User"] != null)
             {
-                ASPxGridView1.DataSource = Session["tbl_Person"];
+                ASPxGridView1.DataSource = Session["tbl_User"];
                 ASPxGridView1.KeyFieldName = "id";
                 ASPxGridView1.DataBind();
             }
@@ -45,13 +45,13 @@ namespace ditipTravel
 
         private void LoadGrid()
         {
-            Session["tbl_Person"] = null;
+            Session["tbl_User"] = null;
             SqlCommand sqlCmd = new SqlCommand();
             SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["ditipTravelConnectionString"].ConnectionString);
 
             sqlCmd.Connection = con;
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = @"SELECT * FROM tbl_Person WITH(NOLOCK)";
+            sqlCmd.CommandText = @"SELECT * FROM tbl_User WITH(NOLOCK)";
 
             SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
             sqlDataAdap.SelectCommand.CommandTimeout = 600;
@@ -61,8 +61,8 @@ namespace ditipTravel
             sqlDataAdap.Fill(dt);
             con.Close();
 
-            Session["tbl_Person"] = dt;
-            ASPxGridView1.DataSource = Session["tbl_Person"];
+            Session["tbl_User"] = dt;
+            ASPxGridView1.DataSource = Session["tbl_User"];
             ASPxGridView1.KeyFieldName = "id";
             ASPxGridView1.DataBind();
         }

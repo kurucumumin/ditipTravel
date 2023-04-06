@@ -18,8 +18,8 @@ namespace ditipTravel
             {
                 if (Request.QueryString["Logout"].ToString() == "1")
                 {
-                    Session["kullaniciAdi"] = null;
-                    Session["kullaniciID"] = null;
+                    Session["userName"] = null;
+                    Session["userID"] = null;
                 }
             }
 
@@ -39,26 +39,33 @@ namespace ditipTravel
         {
             try
             {
-                var kullanici = db.tbl_Persons.Where(k => k.username == txtKullaniciAdi.Value && k.password == txtSifre.Value).FirstOrDefault();
+                var kullanici = db.tbl_Users.Where(k => k.username == txtKullaniciAdi.Value).FirstOrDefault();
 
                 if (kullanici != null)
                 {
-                    if (kullanici.status == true)
+                    if (kullanici.password == txtSifre.Value)
                     {
+                        if (kullanici.status == true)
+                        {
 
 
-                        Session["userID"] = kullanici.id;
-                        Session["username"] = kullanici.username;
-                        Session["name"] = kullanici.name;
-                        Session["surname"] = kullanici.surname;
+                            Session["userID"] = kullanici.id;
+                            Session["username"] = kullanici.username;
+                            Session["name"] = kullanici.name;
+                            Session["surname"] = kullanici.surname;
 
 
 
-                        Response.Redirect("frm_allTravel.aspx", false);
+                            Response.Redirect("frm_allTravel.aspx", false);
+                        }
+                        else
+                            lblMesaj.Text = "Failed to login! User is not active.";
                     }
                     else
-                        lblMesaj.Text = "Failed to login! User is not active.";
-
+                    {
+                        //loglama.logKaydi("ALM", txtKullaniciAdi.Value + " - " + txtSifre.Value, DateTime.Now, "Login", "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.", "Başarısız", "Login Girişi", 0);
+                        lblMesaj.Text = "Failed to login! Please password check and try again.";
+                    }
                 }
                 else
                 {

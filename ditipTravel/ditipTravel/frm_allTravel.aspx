@@ -89,7 +89,7 @@
 
               <dx:ASPxGridView ID="ASPxGridView1" CssClass="grid" runat="server" Theme="Material" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False">
 
-                  <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" FileName="PortExcel" />
+                  <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" FileName="TravelExcel" />
 
                   <SettingsAdaptivity AdaptivityMode="HideDataCellsWindowLimit" HideDataCellsAtWindowInnerWidth="800" AllowOnlyOneAdaptiveDetailExpanded="true" AdaptiveDetailColumnCount="2"></SettingsAdaptivity>
 
@@ -104,28 +104,10 @@
 
                   <Columns>
 
-                      <dx:GridViewDataTextColumn FieldName="ID" VisibleIndex="0" Visible="false"></dx:GridViewDataTextColumn>
-                   <%--   <dx:GridViewDataComboBoxColumn FieldName="KullaniciID" Caption="Atanan Kişi" Visible="true" SortIndex="0" SortOrder="Ascending" AdaptivePriority="1" VisibleIndex="1">
-                          <PropertiesComboBox DataSourceID="LinqDataSource1" ValueField="ID" TextField="KullaniciAdi" ValueType="System.Int32" />
-                      </dx:GridViewDataComboBoxColumn>--%>
-                     <%-- <dx:GridViewDataComboBoxColumn FieldName="ProjeID" Caption="Proje" Visible="true" SortIndex="0" SortOrder="Ascending" AdaptivePriority="1" VisibleIndex="2">
-                          <PropertiesComboBox DataSourceID="LinqDataSource2" ValueField="ID" TextField="ProjeAdi" ValueType="System.Int32" />
-                      </dx:GridViewDataComboBoxColumn>--%>
-                      <dx:GridViewDataTextColumn FieldName="Konu" VisibleIndex="3" Caption="Konu"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="SurecAciklama" VisibleIndex="4" Caption="Açıklama"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataDateColumn FieldName="OlusturmaTarihi" Caption="Oluşturma Tarihi" VisibleIndex="5" ShowInCustomizationForm="True" Width="120">
-                      </dx:GridViewDataDateColumn>
-                      <dx:GridViewDataDateColumn FieldName="TahminiBitisTarihi" Caption="Tahmini Bitiş Tarihi" VisibleIndex="6" ShowInCustomizationForm="True" Width="120">
-                      </dx:GridViewDataDateColumn>
-                      <dx:GridViewDataCheckColumn FieldName="Tamamlandı" VisibleIndex="7"></dx:GridViewDataCheckColumn>
-                      <dx:GridViewDataDateColumn FieldName="TamamlanmaTarihi" Caption="Tamamlanma Tarihi" VisibleIndex="8" ShowInCustomizationForm="True" Width="120">
-                      </dx:GridViewDataDateColumn>
-                      <dx:GridViewDataCheckColumn FieldName="Iptal" Caption="İptal" VisibleIndex="9"></dx:GridViewDataCheckColumn>
-                      <dx:GridViewDataDateColumn FieldName="IptalTarihi" Caption="İptal Tarihi" VisibleIndex="10" ShowInCustomizationForm="True" Width="120">
-                      </dx:GridViewDataDateColumn>
-                     
-
-                      <dx:GridViewDataTextColumn FieldName="NotGoruntusu" VisibleIndex="12" Visible="false"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="id" VisibleIndex="0" Visible="false"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="name" VisibleIndex="1" Caption="Name"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="surname" VisibleIndex="2" Caption="Surname"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="address" VisibleIndex="3" Caption="Address"></dx:GridViewDataTextColumn>
                   </Columns>
 
                   <Toolbars>
@@ -138,7 +120,7 @@
                       </dx:GridViewToolbar>
                   </Toolbars>
 
-                  <Templates>
+                <%--  <Templates>
                       <DetailRow>
 
                           <dx:ASPxGridView ID="detailGrid" runat="server" KeyFieldName="ID" AutoGenerateColumns="False" CssClass="grid" Theme="Material"
@@ -150,12 +132,12 @@
 
                               <Columns>
                                   <dx:GridViewDataTextColumn FieldName="ID" ReadOnly="True" VisibleIndex="0" Visible="false"></dx:GridViewDataTextColumn>
-                                 <%--   <dx:GridViewDataComboBoxColumn FieldName="SureclerID" Caption="Konu" SortIndex="0" SortOrder="Ascending" AdaptivePriority="1" VisibleIndex="1">
+                                    <dx:GridViewDataComboBoxColumn FieldName="SureclerID" Caption="Konu" SortIndex="0" SortOrder="Ascending" AdaptivePriority="1" VisibleIndex="1">
                                       <PropertiesComboBox DataSourceID="LinqDataSource4" ValueField="ID" TextField="Konu" ValueType="System.Int32" />
                                   </dx:GridViewDataComboBoxColumn>
                                   <dx:GridViewDataComboBoxColumn FieldName="DurumID" Caption="Durum" SortIndex="0" SortOrder="Ascending" AdaptivePriority="1" VisibleIndex="2">
                                       <PropertiesComboBox DataSourceID="LinqDataSource3" ValueField="ID" TextField="DurumAdi" ValueType="System.Int32" />
-                                  </dx:GridViewDataComboBoxColumn>--%>
+                                  </dx:GridViewDataComboBoxColumn>
                                   <dx:GridViewDataTextColumn FieldName="Aciklama" Caption="Açıklama" VisibleIndex="3"></dx:GridViewDataTextColumn>
                                  <dx:GridViewDataDateColumn FieldName="OlusturmaTarihi" Caption="İşlem Tarihi" VisibleIndex="4" ShowInCustomizationForm="True" Width="120"></dx:GridViewDataDateColumn>
                               </Columns>
@@ -168,7 +150,7 @@
                       </DetailRow>
                   </Templates>
 
-                  <SettingsDetail ShowDetailRow="true" />
+                  <SettingsDetail ShowDetailRow="true" />--%>
 
                   <Styles>
                       <Cell Wrap="False" />
