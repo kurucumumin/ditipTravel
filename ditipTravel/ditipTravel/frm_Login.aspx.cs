@@ -43,19 +43,27 @@ namespace ditipTravel
 
                 if (kullanici != null)
                 {
-                    Session["userID"] = kullanici.id;
-                    Session["username"] = kullanici.username;
-                    Session["name"] = kullanici.name;
-                    Session["surname"] = kullanici.surname;
+                    if (kullanici.status == true)
+                    {
+
+
+                        Session["userID"] = kullanici.id;
+                        Session["username"] = kullanici.username;
+                        Session["name"] = kullanici.name;
+                        Session["surname"] = kullanici.surname;
 
 
 
-                    Response.Redirect("frm_allTravel.aspx", false);
+                        Response.Redirect("frm_allTravel.aspx", false);
+                    }
+                    else
+                        lblMesaj.Text = "Failed to login! User is not active.";
+
                 }
                 else
                 {
                     //loglama.logKaydi("ALM", txtKullaniciAdi.Value + " - " + txtSifre.Value, DateTime.Now, "Login", "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.", "Başarısız", "Login Girişi", 0);
-                    lblMesaj.Text = "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.";
+                    lblMesaj.Text = "Failed to login! Please check and try again.";
                 }
             }
             catch (Exception ex)

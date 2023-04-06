@@ -7,13 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace ditipTravel
 {
-    public partial class About : Page
+    public partial class frm_password : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            dbDataContext db = new dbDataContext();
-            db.tbl_Persons.ToList();
-            //db.tbl_Persons.Where(op=> op.)
+
         }
     }
 }

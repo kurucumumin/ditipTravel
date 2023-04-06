@@ -10,7 +10,7 @@
 
 namespace ditipTravel
 {
-    public partial class About
+    public partial class frm_password
     {
     }
 }
