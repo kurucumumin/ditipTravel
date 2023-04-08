@@ -27,7 +27,12 @@
 
     <script type="text/javascript">
         function OnContextMenuItemClick(sender, e) {
-            if (e.item.name == "DURUM") {
+            if (e.item.name == "ADD") {
+                e.processOnServer = true;
+                e.usePostBack = true;
+                LoadingPanel.Show();
+            }
+            else if (e.item.name == "UPDATE") {
                 e.processOnServer = true;
                 e.usePostBack = true;
                 LoadingPanel.Show();
@@ -87,7 +92,8 @@
 
              
 
-              <dx:ASPxGridView ID="ASPxGridView1" CssClass="grid" runat="server" Theme="Material" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False">
+              <dx:ASPxGridView ID="ASPxGridView1" CssClass="grid" runat="server" Theme="Material" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False" 
+                  OnFillContextMenuItems="ASPxGridView1_FillContextMenuItems" OnContextMenuItemClick="ASPxGridView1_ContextMenuItemClick">
 
                   <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" FileName="UserExcel" />
 
@@ -99,8 +105,8 @@
                   <Settings ShowHeaderFilterButton="True" />
                   <SettingsSearchPanel Visible="True" />
                    
-                  <%--<SettingsContextMenu Enabled="true" RowMenuItemVisibility-ExportMenu-Visible="true" />--%>
-
+                <SettingsContextMenu Enabled="true" RowMenuItemVisibility-ExportMenu-Visible="true" />
+                <ClientSideEvents ContextMenuItemClick="OnContextMenuItemClick" />
 
                   <Columns>
 
@@ -108,7 +114,9 @@
                       <dx:GridViewDataTextColumn FieldName="name" VisibleIndex="1" Caption="Name"></dx:GridViewDataTextColumn>
                       <dx:GridViewDataTextColumn FieldName="surname" VisibleIndex="2" Caption="Surname"></dx:GridViewDataTextColumn>
                          <dx:GridViewDataTextColumn FieldName="username" VisibleIndex="3" Caption="User Name"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="password" VisibleIndex="4" Caption="Password"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="password" VisibleIndex="4" Caption="Password">
+                          <PropertiesTextEdit Password="True"></PropertiesTextEdit>  
+                      </dx:GridViewDataTextColumn>
                        <dx:GridViewDataCheckColumn FieldName="status" Caption="Status" VisibleIndex="5"></dx:GridViewDataCheckColumn>
                   </Columns>
 

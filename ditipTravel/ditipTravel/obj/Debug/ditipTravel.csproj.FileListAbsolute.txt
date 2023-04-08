@@ -177,7 +177,9 @@ C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\bin\de\DevExpre
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\bin\es\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\bin\ja\DevExpress.Pdf.v18.2.Core.resources.dll
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\bin\ru\DevExpress.Pdf.v18.2.Core.resources.dll
+C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.AssemblyReference.cache
+C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.dll.licenses
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.CoreCompileInputs.cache
+C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.CopyComplete
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.dll
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.pdb
-C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.AssemblyReference.cache

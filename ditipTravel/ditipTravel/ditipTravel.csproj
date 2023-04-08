@@ -173,6 +173,7 @@
     <Content Include="frm_allTravel.aspx" />
     <Content Include="frm_Login.aspx" />
     <Content Include="frm_password.aspx" />
+    <Content Include="frm_userAddUpdate.aspx" />
     <Content Include="frm_userList.aspx" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -395,6 +396,13 @@
     <Compile Include="frm_password.aspx.designer.cs">
       <DependentUpon>frm_password.aspx</DependentUpon>
     </Compile>
+    <Compile Include="frm_userAddUpdate.aspx.cs">
+      <DependentUpon>frm_userAddUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frm_userAddUpdate.aspx.designer.cs">
+      <DependentUpon>frm_userAddUpdate.aspx</DependentUpon>
+    </Compile>
     <Compile Include="frm_userList.aspx.cs">
       <DependentUpon>frm_userList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -450,6 +458,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
