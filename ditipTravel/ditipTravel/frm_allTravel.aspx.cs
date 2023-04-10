@@ -66,5 +66,29 @@ namespace ditipTravel
             ASPxGridView1.KeyFieldName = "id";
             ASPxGridView1.DataBind();
         }
+
+        protected void ASPxGridView1_ContextMenuItemClick(object sender, ASPxGridViewContextMenuItemClickEventArgs e)
+        {
+            if (e.Item.Name == "ADD")
+            {
+                Response.Redirect("frm_travelAddUpdate.aspx?Mod=New");
+            }
+            else if (e.Item.Name == "UPDATE")
+            {
+                Response.Redirect("frm_travelAddUpdate.aspx?Uid=" + ASPxGridView1.GetRowValues(e.ElementIndex, "id") + "&Mod=Update");
+            }
+        }
+
+        protected void ASPxGridView1_FillContextMenuItems(object sender, ASPxGridViewContextMenuEventArgs e)
+        {
+            if (e.MenuType == GridViewContextMenuType.Rows)
+            {
+                e.Items.Clear();
+
+                e.Items.Add("EKLE", "ADD").Image.IconID = "support_version_16x16office2013";
+
+                e.Items.Add("GÜNCELLE", "UPDATE").Image.IconID = "support_version_16x16office2013";
+            }
+        }
     }
 }

@@ -173,6 +173,7 @@
     <Content Include="frm_allTravel.aspx" />
     <Content Include="frm_Login.aspx" />
     <Content Include="frm_password.aspx" />
+    <Content Include="frm_travelAddUpdate.aspx" />
     <Content Include="frm_userAddUpdate.aspx" />
     <Content Include="frm_userList.aspx" />
     <Content Include="Global.asax" />
@@ -395,6 +396,13 @@
     </Compile>
     <Compile Include="frm_password.aspx.designer.cs">
       <DependentUpon>frm_password.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="frm_travelAddUpdate.aspx.cs">
+      <DependentUpon>frm_travelAddUpdate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="frm_travelAddUpdate.aspx.designer.cs">
+      <DependentUpon>frm_travelAddUpdate.aspx</DependentUpon>
     </Compile>
     <Compile Include="frm_userAddUpdate.aspx.cs">
       <DependentUpon>frm_userAddUpdate.aspx</DependentUpon>

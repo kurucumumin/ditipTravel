@@ -27,7 +27,12 @@
 
     <script type="text/javascript">
         function OnContextMenuItemClick(sender, e) {
-            if (e.item.name == "DURUM") {
+            if (e.item.name == "ADD") {
+                e.processOnServer = true;
+                e.usePostBack = true;
+                LoadingPanel.Show();
+            }
+            else if (e.item.name == "UPDATE") {
                 e.processOnServer = true;
                 e.usePostBack = true;
                 LoadingPanel.Show();
@@ -87,7 +92,8 @@
 
              
 
-              <dx:ASPxGridView ID="ASPxGridView1" CssClass="grid" runat="server" Theme="Material" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False">
+              <dx:ASPxGridView ID="ASPxGridView1" CssClass="grid" runat="server" Theme="Material" Width="100%" AutoGenerateColumns="False" EnableCallBacks="False"
+                  OnFillContextMenuItems="ASPxGridView1_FillContextMenuItems" OnContextMenuItemClick="ASPxGridView1_ContextMenuItemClick">
 
                   <SettingsExport EnableClientSideExportAPI="true" ExcelExportMode="WYSIWYG" FileName="TravelExcel" />
 
@@ -100,7 +106,7 @@
                   <SettingsSearchPanel Visible="True" />
                    
                   <SettingsContextMenu Enabled="true" RowMenuItemVisibility-ExportMenu-Visible="true" />
-
+                     <ClientSideEvents ContextMenuItemClick="OnContextMenuItemClick" />
 
                   <Columns>
 
