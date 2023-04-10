@@ -33,6 +33,9 @@ namespace ditipTravel
     partial void Inserttbl_User(tbl_User instance);
     partial void Updatetbl_User(tbl_User instance);
     partial void Deletetbl_User(tbl_User instance);
+    partial void Inserttbl_Travel(tbl_Travel instance);
+    partial void Updatetbl_Travel(tbl_Travel instance);
+    partial void Deletetbl_Travel(tbl_Travel instance);
     #endregion
 		
 		public dbDataContext() : 
@@ -65,14 +68,6 @@ namespace ditipTravel
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<tbl_Travel> tbl_Travels
-		{
-			get
-			{
-				return this.GetTable<tbl_Travel>();
-			}
-		}
-		
 		public System.Data.Linq.Table<tbl_User> tbl_Users
 		{
 			get
@@ -80,85 +75,12 @@ namespace ditipTravel
 				return this.GetTable<tbl_User>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Travels")]
-	public partial class tbl_Travel
-	{
 		
-		private int _id;
-		
-		private string _name;
-		
-		private string _surname;
-		
-		private string _address;
-		
-		public tbl_Travel()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int id
+		public System.Data.Linq.Table<tbl_Travel> tbl_Travels
 		{
 			get
 			{
-				return this._id;
-			}
-			set
-			{
-				if ((this._id != value))
-				{
-					this._id = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(50)")]
-		public string name
-		{
-			get
-			{
-				return this._name;
-			}
-			set
-			{
-				if ((this._name != value))
-				{
-					this._name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_surname", DbType="NChar(50)")]
-		public string surname
-		{
-			get
-			{
-				return this._surname;
-			}
-			set
-			{
-				if ((this._surname != value))
-				{
-					this._surname = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NChar(250)")]
-		public string address
-		{
-			get
-			{
-				return this._address;
-			}
-			set
-			{
-				if ((this._address != value))
-				{
-					this._address = value;
-				}
+				return this.GetTable<tbl_Travel>();
 			}
 		}
 	}
@@ -320,6 +242,524 @@ namespace ditipTravel
 					this._status = value;
 					this.SendPropertyChanged("status");
 					this.OnstatusChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.tbl_Travel")]
+	public partial class tbl_Travel : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _id;
+		
+		private string _name;
+		
+		private string _surname;
+		
+		private string _gender;
+		
+		private System.Nullable<bool> _student;
+		
+		private string _birthPlace;
+		
+		private System.Nullable<System.DateTime> _birthDay;
+		
+		private string _airport;
+		
+		private string _nationality;
+		
+		private System.Nullable<int> _passaportNo;
+		
+		private System.Nullable<System.DateTime> _passaportDate;
+		
+		private System.Nullable<int> _tcNo;
+		
+		private string _mailAddress;
+		
+		private string _mobilePhone;
+		
+		private string _address;
+		
+		private string _state;
+		
+		private System.Nullable<int> _prepaymentAmount;
+		
+		private System.Nullable<System.DateTime> _prepaymentDate;
+		
+		private System.Nullable<int> _dueAmount;
+		
+		private System.Nullable<System.DateTime> _dueDate;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
+    partial void OnnameChanging(string value);
+    partial void OnnameChanged();
+    partial void OnsurnameChanging(string value);
+    partial void OnsurnameChanged();
+    partial void OngenderChanging(string value);
+    partial void OngenderChanged();
+    partial void OnstudentChanging(System.Nullable<bool> value);
+    partial void OnstudentChanged();
+    partial void OnbirthPlaceChanging(string value);
+    partial void OnbirthPlaceChanged();
+    partial void OnbirthDayChanging(System.Nullable<System.DateTime> value);
+    partial void OnbirthDayChanged();
+    partial void OnairportChanging(string value);
+    partial void OnairportChanged();
+    partial void OnnationalityChanging(string value);
+    partial void OnnationalityChanged();
+    partial void OnpassaportNoChanging(System.Nullable<int> value);
+    partial void OnpassaportNoChanged();
+    partial void OnpassaportDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnpassaportDateChanged();
+    partial void OntcNoChanging(System.Nullable<int> value);
+    partial void OntcNoChanged();
+    partial void OnmailAddressChanging(string value);
+    partial void OnmailAddressChanged();
+    partial void OnmobilePhoneChanging(string value);
+    partial void OnmobilePhoneChanged();
+    partial void OnaddressChanging(string value);
+    partial void OnaddressChanged();
+    partial void OnstateChanging(string value);
+    partial void OnstateChanged();
+    partial void OnprepaymentAmountChanging(System.Nullable<int> value);
+    partial void OnprepaymentAmountChanged();
+    partial void OnprepaymentDateChanging(System.Nullable<System.DateTime> value);
+    partial void OnprepaymentDateChanged();
+    partial void OndueAmountChanging(System.Nullable<int> value);
+    partial void OndueAmountChanged();
+    partial void OndueDateChanging(System.Nullable<System.DateTime> value);
+    partial void OndueDateChanged();
+    #endregion
+		
+		public tbl_Travel()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
+		{
+			get
+			{
+				return this._id;
+			}
+			set
+			{
+				if ((this._id != value))
+				{
+					this.OnidChanging(value);
+					this.SendPropertyChanging();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_name", DbType="NChar(50)")]
+		public string name
+		{
+			get
+			{
+				return this._name;
+			}
+			set
+			{
+				if ((this._name != value))
+				{
+					this.OnnameChanging(value);
+					this.SendPropertyChanging();
+					this._name = value;
+					this.SendPropertyChanged("name");
+					this.OnnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_surname", DbType="NChar(50)")]
+		public string surname
+		{
+			get
+			{
+				return this._surname;
+			}
+			set
+			{
+				if ((this._surname != value))
+				{
+					this.OnsurnameChanging(value);
+					this.SendPropertyChanging();
+					this._surname = value;
+					this.SendPropertyChanged("surname");
+					this.OnsurnameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="NChar(6)")]
+		public string gender
+		{
+			get
+			{
+				return this._gender;
+			}
+			set
+			{
+				if ((this._gender != value))
+				{
+					this.OngenderChanging(value);
+					this.SendPropertyChanging();
+					this._gender = value;
+					this.SendPropertyChanged("gender");
+					this.OngenderChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_student", DbType="Bit")]
+		public System.Nullable<bool> student
+		{
+			get
+			{
+				return this._student;
+			}
+			set
+			{
+				if ((this._student != value))
+				{
+					this.OnstudentChanging(value);
+					this.SendPropertyChanging();
+					this._student = value;
+					this.SendPropertyChanged("student");
+					this.OnstudentChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthPlace", DbType="NChar(50)")]
+		public string birthPlace
+		{
+			get
+			{
+				return this._birthPlace;
+			}
+			set
+			{
+				if ((this._birthPlace != value))
+				{
+					this.OnbirthPlaceChanging(value);
+					this.SendPropertyChanging();
+					this._birthPlace = value;
+					this.SendPropertyChanged("birthPlace");
+					this.OnbirthPlaceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthDay", DbType="Date")]
+		public System.Nullable<System.DateTime> birthDay
+		{
+			get
+			{
+				return this._birthDay;
+			}
+			set
+			{
+				if ((this._birthDay != value))
+				{
+					this.OnbirthDayChanging(value);
+					this.SendPropertyChanging();
+					this._birthDay = value;
+					this.SendPropertyChanged("birthDay");
+					this.OnbirthDayChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_airport", DbType="NChar(50)")]
+		public string airport
+		{
+			get
+			{
+				return this._airport;
+			}
+			set
+			{
+				if ((this._airport != value))
+				{
+					this.OnairportChanging(value);
+					this.SendPropertyChanging();
+					this._airport = value;
+					this.SendPropertyChanged("airport");
+					this.OnairportChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nationality", DbType="NChar(50)")]
+		public string nationality
+		{
+			get
+			{
+				return this._nationality;
+			}
+			set
+			{
+				if ((this._nationality != value))
+				{
+					this.OnnationalityChanging(value);
+					this.SendPropertyChanging();
+					this._nationality = value;
+					this.SendPropertyChanged("nationality");
+					this.OnnationalityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passaportNo", DbType="Int")]
+		public System.Nullable<int> passaportNo
+		{
+			get
+			{
+				return this._passaportNo;
+			}
+			set
+			{
+				if ((this._passaportNo != value))
+				{
+					this.OnpassaportNoChanging(value);
+					this.SendPropertyChanging();
+					this._passaportNo = value;
+					this.SendPropertyChanged("passaportNo");
+					this.OnpassaportNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passaportDate", DbType="Date")]
+		public System.Nullable<System.DateTime> passaportDate
+		{
+			get
+			{
+				return this._passaportDate;
+			}
+			set
+			{
+				if ((this._passaportDate != value))
+				{
+					this.OnpassaportDateChanging(value);
+					this.SendPropertyChanging();
+					this._passaportDate = value;
+					this.SendPropertyChanged("passaportDate");
+					this.OnpassaportDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tcNo", DbType="Int")]
+		public System.Nullable<int> tcNo
+		{
+			get
+			{
+				return this._tcNo;
+			}
+			set
+			{
+				if ((this._tcNo != value))
+				{
+					this.OntcNoChanging(value);
+					this.SendPropertyChanging();
+					this._tcNo = value;
+					this.SendPropertyChanged("tcNo");
+					this.OntcNoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mailAddress", DbType="NChar(250)")]
+		public string mailAddress
+		{
+			get
+			{
+				return this._mailAddress;
+			}
+			set
+			{
+				if ((this._mailAddress != value))
+				{
+					this.OnmailAddressChanging(value);
+					this.SendPropertyChanging();
+					this._mailAddress = value;
+					this.SendPropertyChanged("mailAddress");
+					this.OnmailAddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mobilePhone", DbType="NChar(13)")]
+		public string mobilePhone
+		{
+			get
+			{
+				return this._mobilePhone;
+			}
+			set
+			{
+				if ((this._mobilePhone != value))
+				{
+					this.OnmobilePhoneChanging(value);
+					this.SendPropertyChanging();
+					this._mobilePhone = value;
+					this.SendPropertyChanged("mobilePhone");
+					this.OnmobilePhoneChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_address", DbType="NChar(250)")]
+		public string address
+		{
+			get
+			{
+				return this._address;
+			}
+			set
+			{
+				if ((this._address != value))
+				{
+					this.OnaddressChanging(value);
+					this.SendPropertyChanging();
+					this._address = value;
+					this.SendPropertyChanged("address");
+					this.OnaddressChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_state", DbType="NChar(50)")]
+		public string state
+		{
+			get
+			{
+				return this._state;
+			}
+			set
+			{
+				if ((this._state != value))
+				{
+					this.OnstateChanging(value);
+					this.SendPropertyChanging();
+					this._state = value;
+					this.SendPropertyChanged("state");
+					this.OnstateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prepaymentAmount", DbType="Int")]
+		public System.Nullable<int> prepaymentAmount
+		{
+			get
+			{
+				return this._prepaymentAmount;
+			}
+			set
+			{
+				if ((this._prepaymentAmount != value))
+				{
+					this.OnprepaymentAmountChanging(value);
+					this.SendPropertyChanging();
+					this._prepaymentAmount = value;
+					this.SendPropertyChanged("prepaymentAmount");
+					this.OnprepaymentAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prepaymentDate", DbType="Date")]
+		public System.Nullable<System.DateTime> prepaymentDate
+		{
+			get
+			{
+				return this._prepaymentDate;
+			}
+			set
+			{
+				if ((this._prepaymentDate != value))
+				{
+					this.OnprepaymentDateChanging(value);
+					this.SendPropertyChanging();
+					this._prepaymentDate = value;
+					this.SendPropertyChanged("prepaymentDate");
+					this.OnprepaymentDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dueAmount", DbType="Int")]
+		public System.Nullable<int> dueAmount
+		{
+			get
+			{
+				return this._dueAmount;
+			}
+			set
+			{
+				if ((this._dueAmount != value))
+				{
+					this.OndueAmountChanging(value);
+					this.SendPropertyChanging();
+					this._dueAmount = value;
+					this.SendPropertyChanged("dueAmount");
+					this.OndueAmountChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dueDate", DbType="Date")]
+		public System.Nullable<System.DateTime> dueDate
+		{
+			get
+			{
+				return this._dueDate;
+			}
+			set
+			{
+				if ((this._dueDate != value))
+				{
+					this.OndueDateChanging(value);
+					this.SendPropertyChanging();
+					this._dueDate = value;
+					this.SendPropertyChanged("dueDate");
+					this.OndueDateChanged();
 				}
 			}
 		}

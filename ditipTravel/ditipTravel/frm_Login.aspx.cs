@@ -64,13 +64,14 @@ namespace ditipTravel
                     else
                     {
                         //loglama.logKaydi("ALM", txtKullaniciAdi.Value + " - " + txtSifre.Value, DateTime.Now, "Login", "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.", "Başarısız", "Login Girişi", 0);
-                        lblMesaj.Text = "Failed to login! Please password check and try again.";
+                        //lblMesaj.Text = "Failed to login! Please password check and try again.";
+                        lblMesaj.Text = "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.";
                     }
                 }
                 else
                 {
                     //loglama.logKaydi("ALM", txtKullaniciAdi.Value + " - " + txtSifre.Value, DateTime.Now, "Login", "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.", "Başarısız", "Login Girişi", 0);
-                    lblMesaj.Text = "Failed to login! Please check and try again.";
+                    lblMesaj.Text = "Giriş yapılamadı! Lütfen bilgilerinizi kontrol edip tekrar deneyin.";
                 }
             }
             catch (Exception ex)

@@ -85,9 +85,9 @@ namespace ditipTravel
             {
                 e.Items.Clear();
 
-                e.Items.Add("ADD", "ADD").Image.IconID = "support_version_16x16office2013";
+                e.Items.Add("EKLE", "ADD").Image.IconID = "support_version_16x16office2013";
 
-                e.Items.Add("UPDATE", "UPDATE").Image.IconID = "support_version_16x16office2013";
+                e.Items.Add("GÜNCELLE", "UPDATE").Image.IconID = "support_version_16x16office2013";
             }
         }
     }

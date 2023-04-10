@@ -45,13 +45,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 class="m-0 text-dark">All Travels</h1>
+                        <h1 class="m-0 text-dark">Tüm Seyahatler</h1>
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="frm_allTravel.aspx">Main Page</a></li>
-                            <li class="breadcrumb-item active">All Travels</li>
+                            <li class="breadcrumb-item"><a href="frm_allTravel.aspx">Ana Sayfa</a></li>
+                            <li class="breadcrumb-item active">Tüm Seyahatler</li>
                         </ol>
                     </div>
                     <!-- /.col -->
@@ -105,9 +105,24 @@
                   <Columns>
 
                       <dx:GridViewDataTextColumn FieldName="id" VisibleIndex="0" Visible="false"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="name" VisibleIndex="1" Caption="Name"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="surname" VisibleIndex="2" Caption="Surname"></dx:GridViewDataTextColumn>
-                      <dx:GridViewDataTextColumn FieldName="address" VisibleIndex="3" Caption="Address"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="name" VisibleIndex="1" Caption="İsim"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="surname" VisibleIndex="2" Caption="Soyisim"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="gender" VisibleIndex="3" Caption="Cinsiyet"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataCheckColumn FieldName="student" VisibleIndex="2" Caption="Öğrenci mi?"></dx:GridViewDataCheckColumn>
+                      <dx:GridViewDataDateColumn FieldName="birthDay" VisibleIndex="3" Caption="Doğum Tarihi"></dx:GridViewDataDateColumn>
+                      <dx:GridViewDataTextColumn FieldName="airport" VisibleIndex="3" Caption="Havaalanı"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="nationality" VisibleIndex="3" Caption="Uyruk"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="passaportNo" VisibleIndex="3" Caption="Pasaport No"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataDateColumn FieldName="passaportDate" VisibleIndex="3" Caption="Pasaport Tarihi"></dx:GridViewDataDateColumn>
+                      <dx:GridViewDataTextColumn FieldName="tcNo" VisibleIndex="3" Caption="TC No"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="mailAddress" VisibleIndex="3" Caption="Mail Adres"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="mobilePhone" VisibleIndex="3" Caption="Telefon"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="address" VisibleIndex="3" Caption="Adres"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="state" VisibleIndex="3" Caption="Eyalet"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataTextColumn FieldName="prepaymentAmount" VisibleIndex="3" Caption="Ön Ödeme Tutarı"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataDateColumn FieldName="prepaymentDate" VisibleIndex="3" Caption="Ön Ödeme Tarihi"></dx:GridViewDataDateColumn>
+                      <dx:GridViewDataTextColumn FieldName="dueAmount" VisibleIndex="3" Caption="Son Ödeme Tutarı"></dx:GridViewDataTextColumn>
+                      <dx:GridViewDataDateColumn FieldName="dueDate" VisibleIndex="3" Caption="Son Ödeme Tarihi"></dx:GridViewDataDateColumn>
                   </Columns>
 
                   <Toolbars>

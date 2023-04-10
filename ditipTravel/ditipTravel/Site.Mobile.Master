@@ -68,7 +68,7 @@
                                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                             </li>
                             <li class="nav-item d-none d-sm-inline-block">
-                                <a href="frm_allTravel.aspx" class="nav-link">Main Page</a>
+                                <a href="frm_allTravel.aspx" class="nav-link">Ana Sayfa</a>
                             </li>
                             <%--<li class="nav-item d-none d-sm-inline-block">
                                 <a href="#" class="nav-link" style="font-weight: bold; color: red;">Destek</a>
@@ -88,7 +88,7 @@
                         <!-- Brand Logo -->
                         <a href="main.aspx" class="brand-link">
                             <%--<img src="images/icons/favicon.ico" alt="" class="brand-image img-circle elevation-3 bg-white" style="opacity: .8" />--%>
-                            <span class="brand-text font-weight-light"><strong>DÝTÝB TRAVEL</strong></span>
+                            <span class="brand-text font-weight-light"><strong>DÝTÝB SEYAHAT</strong></span>
                         </a>
 
                         <!-- Sidebar -->
@@ -115,7 +115,7 @@
                                         <a href="frm_allTravel.aspx" class="nav-link">
                                             <i class="nav-icon fas fa-car"></i>
                                             <p>
-                                                Travels               
+                                                Seyahatler               
                                        <%-- <i class="fas fa-angle-left right"></i>--%>
                                             </p>
                                         </a>
@@ -176,7 +176,7 @@
                                         <a href="#" class="nav-link">
                                             <i class="nav-icon fas fa-user-tie"></i>
                                             <p>
-                                                User
+                                                Kullanýcýlar
                
                                         <i class="fas fa-angle-left right"></i>
                                             </p>
@@ -186,21 +186,22 @@
                                             <li class="nav-item">
                                                 <a href="frm_userList.aspx" class="nav-link">
                                                     <i class="fas fa-user nav-icon"></i>
-                                                    <p>User List</p>
+                                                    <p>Kullanýcý Listesi</p>
                                                 </a>
                                             </li>
 
                                             <li class="nav-item">
                                                 <a href="frm_password.aspx" class="nav-link">
                                                     <i class="fas fa-key nav-icon"></i>
-                                                    <p>Password Change</p>
+                                                    <p>Þifre Deðiþtir</p>
                                                 </a>
                                             </li>
                                         </ul>
                                     </li>
 
                                     <li id="btnLog" runat="server" class="nav-item has-treeview">
-                                        <a href="frm_log.aspx" class="nav-link">
+                                       <%-- <a href="frm_log.aspx" class="nav-link">--%>
+                                         <a href="#" class="nav-link">
                                             <i class="nav-icon fas fa-mouse nav-icon"></i>
                                             <p>
                                                 Log
@@ -232,7 +233,7 @@
                         
 
                         <div class="float-right d-none d-sm-inline-block">
-                            <b>Copyright 2023 DÝTÝB - All rights reserved. Version</b> 1.0.0. BETA
+                             <b>Telif Hakký 2023 DÝTÝB - Tüm haklarý saklýdýr. Sürüm</b> 1.0.0. BETA
    
                         </div>
 

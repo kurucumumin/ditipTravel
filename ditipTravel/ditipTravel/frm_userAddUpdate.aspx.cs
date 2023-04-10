@@ -15,15 +15,15 @@ namespace ditipTravel
                 {
                     if (Request.QueryString["Mod"] == "New")
                     {
-                        pageName.InnerText = "User Add";
-                        pageName2.InnerText = "User Add";
-                        btnUpdate.Text = "Add";
+                        pageName.InnerText = "Kullanıcı Ekle";
+                        pageName2.InnerText = "Kullanıcı Ekle";
+                        btnUpdate.Text = "EKLE";
                     }
                     else if (Request.QueryString["Mod"] == "Update")
                     {
-                        pageName.InnerText = "User Update";
-                        pageName2.InnerText = "User Update";
-                        btnUpdate.Text = "Update";
+                        pageName.InnerText = "Kullanıcı Güncelle";
+                        pageName2.InnerText = "Kullanıcı Güncelle";
+                        btnUpdate.Text = "Güncelle";
                         passDiv.Visible = false;
 
                         if (Request.QueryString["Uid"] != null)
@@ -45,7 +45,7 @@ namespace ditipTravel
             }
             catch (Exception ex)
             {
-                lblMessageHata.Text = "Error Detail :" + ex.ToString();
+                lblMessageHata.Text = "Hata Detayı: " + ex.ToString();
                 PopupMessageBoxHata.ShowOnPageLoad = true;
             }
         }
@@ -61,51 +61,59 @@ namespace ditipTravel
 
             if (Request.QueryString["Mod"] == "New")
             {
-                //Girilen şifreler aynı mı?
-                if (txtNewPass.Value.ToString() == txtNewPassAgain.Value.ToString())
+                if (!txtUsername.Text.Contains(" "))
                 {
-                    if (IsControll(txtNewPass.Text))
+                    //Girilen şifreler aynı mı?
+                    if (txtNewPass.Value.ToString() == txtNewPassAgain.Value.ToString())
                     {
-                        tbl_User user = new tbl_User();
+                        if (IsControll(txtNewPass.Text))
+                        {
+                            tbl_User user = new tbl_User();
 
-                        user.name = txtName.Text;
-                        user.surname = txtSurname.Text;
-                        user.username = txtUsername.Text;
-                        user.password = txtNewPass.Text;
-                        user.status = (radioButtonList.SelectedIndex == 0 ? true : false);
+                            user.name = txtName.Text;
+                            user.surname = txtSurname.Text;
+                            user.username = txtUsername.Text;
+                            user.password = txtNewPass.Text;
+                            user.status = (radioButtonList.SelectedIndex == 0 ? true : false);
 
-                        db.tbl_Users.InsertOnSubmit(user);
-                        db.SubmitChanges();
+                            db.tbl_Users.InsertOnSubmit(user);
+                            db.SubmitChanges();
 
-                        #region Loglama
+                            #region Loglama
 
-                        //if (Session["BayiAdi"] != null && Session["b2bKullanici"] != null)
-                        //{
-                        //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Şifre değiştirildi. ", "Başarılı", "Şifre Güncelle", 0);
-                        //}
+                            //if (Session["BayiAdi"] != null && Session["b2bKullanici"] != null)
+                            //{
+                            //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Şifre değiştirildi. ", "Başarılı", "Şifre Güncelle", 0);
+                            //}
 
-                        #endregion
+                            #endregion
 
-                        lblMessageBasarili.Text = "User added.";
-                        PopupMessageBoxBasarili.ShowOnPageLoad = true;
+                            lblMessageBasarili.Text = "Kullanıcı başarıyla eklendi.";
+                            PopupMessageBoxBasarili.ShowOnPageLoad = true;
+                        }
+                        else
+                        {
+                            //if (Session["BayiAdi"] != null && Session["b2bKullanici"] != null)
+                            //{
+                            //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir.", "Başarısız", "Şifre Güncelle", 0);
+                            //}
+                            lblMessageHata.Text = "Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir.";
+                            PopupMessageBoxHata.ShowOnPageLoad = true;
+                        }
                     }
                     else
                     {
                         //if (Session["BayiAdi"] != null && Session["b2bKullanici"] != null)
                         //{
-                        //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir.", "Başarısız", "Şifre Güncelle", 0);
+                        //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Girmiş olduğunuz şifreler aynı değil.", "Başarısız", "Şifre Güncelle", 0);
                         //}
-                        lblMessageHata.Text = "Password must be at least 6 characters. It must contain numbers and letters.";
+                        lblMessageHata.Text = "Girmiş olduğunuz şifreler aynı değil.";
                         PopupMessageBoxHata.ShowOnPageLoad = true;
                     }
                 }
                 else
                 {
-                    //if (Session["BayiAdi"] != null && Session["b2bKullanici"] != null)
-                    //{
-                    //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Girmiş olduğunuz şifreler aynı değil.", "Başarısız", "Şifre Güncelle", 0);
-                    //}
-                    lblMessageHata.Text = "The passwords you entered are not the same.";
+                    lblMessageHata.Text = "Kullanıcı adını boşluk olmadan giriniz.";
                     PopupMessageBoxHata.ShowOnPageLoad = true;
                 }
             }
@@ -124,12 +132,12 @@ namespace ditipTravel
 
                         db.SubmitChanges();
 
-                        lblMessageBasarili.Text = "User update.";
+                        lblMessageBasarili.Text = "Kullanıcı başarıyla güncellendi.";
                         PopupMessageBoxBasarili.ShowOnPageLoad = true;
                     }
                     else
                     {
-                        lblMessageHata.Text = "The username cannot have space!";
+                        lblMessageHata.Text = "Kullanıcı adını boşluk olmadan giriniz.";
                         PopupMessageBoxHata.ShowOnPageLoad = true;
                     }
                 }

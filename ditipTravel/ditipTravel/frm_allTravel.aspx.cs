@@ -51,7 +51,7 @@ namespace ditipTravel
 
             sqlCmd.Connection = con;
             sqlCmd.CommandType = CommandType.Text;
-            sqlCmd.CommandText = @"SELECT * FROM tbl_Travels WITH(NOLOCK)";
+            sqlCmd.CommandText = @"SELECT * FROM tbl_Travel WITH(NOLOCK)";
 
             SqlDataAdapter sqlDataAdap = new SqlDataAdapter(sqlCmd);
             sqlDataAdap.SelectCommand.CommandTimeout = 600;

@@ -12,13 +12,13 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1 runat="server" id="pageName" class="m-0 text-dark">User Add</h1>
+                        <h1 runat="server" id="pageName" class="m-0 text-dark">Kullanıcı Ekle</h1>
                     </div>
                     <!-- /.col -->
                     <div class="col-sm-6">
                         <ol class="breadcrumb float-sm-right">
-                            <li class="breadcrumb-item"><a href="frm_AllTravel.aspx">Main Page</a></li>
-                            <li runat="server" id="pageName2" class="breadcrumb-item active">User Add</li>
+                            <li class="breadcrumb-item"><a href="frm_AllTravel.aspx">Ana Sayfa</a></li>
+                            <li runat="server" id="pageName2" class="breadcrumb-item active">Kullanıcı Ekle</li>
                         </ol>
                     </div>
                     <!-- /.col -->
@@ -39,16 +39,16 @@
             </div>
 
             <div style="display: flex; justify-content: flex-end">
-                <asp:Button ID="btnCancel" runat="server" class="btn btn-outline-dark" Text="CANCEL" OnClick="btnCancel_Click" />
+                <asp:Button ID="btnCancel" runat="server" class="btn btn-outline-dark" Text="İPTAL" OnClick="btnCancel_Click" />
                 &nbsp &nbsp
-                        <asp:Button ID="btnUpdate" runat="server" class="btn btn-success" Text="UPDATE" OnClick="btnUpdate_Click" />
+                        <asp:Button ID="btnUpdate" runat="server" class="btn btn-success" Text="GÜNCELLE" OnClick="btnUpdate_Click" />
             </div>
 
             <br />
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Name</span>
+                    <span>İsim</span>
                 </div>
                 <div class="col-7">
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
@@ -62,7 +62,7 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Surname</span>
+                    <span>Soyisim</span>
                 </div>
                 <div class="col-7">
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
@@ -76,7 +76,7 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Username</span>
+                    <span>Kullanıcı Adı</span>
                 </div>
                 <div class="col-7">
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
@@ -90,15 +90,15 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Status</span>
+                    <span>Aktif</span>
                 </div>
             <div class="col-7">
                 <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
                     <dx:ASPxRadioButtonList ID="radioButtonList" SelectedIndex="0" runat="server" RepeatColumns="2" RepeatLayout="Flow">
                         <CaptionSettings Position="Top" />
                         <Items>
-                            <dx:ListEditItem Text="Active" Value="0" />
-                            <dx:ListEditItem Text="Passive" Value="1" />
+                            <dx:ListEditItem Text="Aktif" Value="0" />
+                            <dx:ListEditItem Text="Pasif" Value="1" />
                         </Items>
                     </dx:ASPxRadioButtonList>
                 </div>
@@ -112,7 +112,7 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>New Password</span>
+                    <span>Yeni Şifre</span>
                 </div>
                 <div class="col-7">
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type password">
@@ -127,7 +127,7 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>New Password Again</span>
+                    <span>Yeni Şifre Tekrar</span>
                 </div>
                 <div class="col-7">
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type password">
@@ -141,8 +141,8 @@
             <div class="form-row">
                 <div class="col">
                     <hr />
-                    <%--<p> <strong>Not: </strong> Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir. Güvenliğiniz için şifrenizi kimse ile paylaşmayınınz! </p>--%>
-                    <p><strong>Note: </strong>Password must be at least 6 characters. It must contain numbers and letters. For your safety, do not share your password with anyone! </p>
+                    <p> <strong>Not: </strong> Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir. Güvenliğiniz için şifrenizi kimse ile paylaşmayınınz! </p>
+                   <%-- <p><strong>Note: </strong>Password must be at least 6 characters. It must contain numbers and letters. For your safety, do not share your password with anyone! </p>--%>
 
                 </div>
             </div>

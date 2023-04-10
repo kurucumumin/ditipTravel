@@ -68,7 +68,7 @@ namespace ditipTravel
                                     //{
                                     //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir.", "Başarısız", "Şifre Güncelle", 0);
                                     //}
-                                    lblMessageHata.Text = "Password must be at least 6 characters. It must contain numbers and letters.";
+                                    lblMessageHata.Text = "Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir.";
                                     PopupMessageBoxHata.ShowOnPageLoad = true;
                                 }
                             }
@@ -78,7 +78,7 @@ namespace ditipTravel
                                 //{
                                 //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Girmiş olduğunuz şifreler aynı değil.", "Başarısız", "Şifre Güncelle", 0);
                                 //}
-                                lblMessageHata.Text = "The passwords you entered are not the same.";
+                                lblMessageHata.Text = "Girmiş olduğunuz şifreler aynı değil.";
                                 PopupMessageBoxHata.ShowOnPageLoad = true;
                             }
                         }
@@ -88,7 +88,7 @@ namespace ditipTravel
                             //{
                             //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Eski şifrenizi yanlış girdiniz.", "Başarısız", "Şifre Güncelle", 0);
                             //}
-                            lblMessageHata.Text = "You entered your old password incorrectly.";
+                            lblMessageHata.Text = "Eski şifrenizi yanlış girdiniz.";
                             PopupMessageBoxHata.ShowOnPageLoad = true;
                         }
                     }
@@ -100,7 +100,7 @@ namespace ditipTravel
                 //{
                 //    loglama.logKaydi(Session["BayiAdi"].ToString(), Session["b2bKullanici"].ToString(), DateTime.Now, "Şifre Değiştir", "Hata Detayı :" + ex.ToString(), "Başarısız", "Şifre Güncelle", 0);
                 //}
-                lblMessageHata.Text = "Error Detail :" + ex.ToString();
+                lblMessageHata.Text = "Hata Detayı: " + ex.ToString();
                 PopupMessageBoxHata.ShowOnPageLoad = true;
             }
         }

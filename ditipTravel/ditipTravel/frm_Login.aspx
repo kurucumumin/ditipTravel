@@ -57,17 +57,17 @@
                           <%--BOŞLUK--%>
 
                         <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
-                            <input id="txtKullaniciAdi" runat="server" class="input100" type="text" name="kullanici" placeholder="User Name" />
+                            <input id="txtKullaniciAdi" runat="server" class="input100" type="text" name="kullanici" placeholder="Kullanıcı Adı" />
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type password">
-                            <input id="txtSifre" runat="server" class="input100" type="password" name="sifre" placeholder="Password" />
+                            <input id="txtSifre" runat="server" class="input100" type="password" name="sifre" placeholder="Şifre" />
                             <span class="focus-input100"></span>
                         </div>
 
                         <div class="container-login100-form-btn">
-                            <asp:Button ID="btnGiris" class="login100-form-btn hov-pointer" runat="server" Text="LOGIN" OnClick="btnGiris_Click" />
+                            <asp:Button ID="btnGiris" class="login100-form-btn hov-pointer" runat="server" Text="GİRİŞ" OnClick="btnGiris_Click" />
                             <%--<button class="login100-form-btn">
                                         GİRİŞ
                                     </button>--%>
