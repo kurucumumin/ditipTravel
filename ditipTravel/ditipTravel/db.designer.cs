@@ -291,11 +291,11 @@ namespace ditipTravel
 		
 		private string _nationality;
 		
-		private System.Nullable<int> _passaportNo;
+		private string _passaportNo;
 		
 		private System.Nullable<System.DateTime> _passaportDate;
 		
-		private System.Nullable<int> _tcNo;
+		private string _tcNo;
 		
 		private string _mailAddress;
 		
@@ -305,13 +305,17 @@ namespace ditipTravel
 		
 		private string _state;
 		
-		private System.Nullable<int> _prepaymentAmount;
+		private System.Nullable<decimal> _prepaymentAmount;
 		
 		private System.Nullable<System.DateTime> _prepaymentDate;
 		
-		private System.Nullable<int> _dueAmount;
+		private System.Nullable<decimal> _dueAmount;
 		
 		private System.Nullable<System.DateTime> _dueDate;
+		
+		private string _createUser;
+		
+		private System.Nullable<System.DateTime> _createDate;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -335,11 +339,11 @@ namespace ditipTravel
     partial void OnairportChanged();
     partial void OnnationalityChanging(string value);
     partial void OnnationalityChanged();
-    partial void OnpassaportNoChanging(System.Nullable<int> value);
+    partial void OnpassaportNoChanging(string value);
     partial void OnpassaportNoChanged();
     partial void OnpassaportDateChanging(System.Nullable<System.DateTime> value);
     partial void OnpassaportDateChanged();
-    partial void OntcNoChanging(System.Nullable<int> value);
+    partial void OntcNoChanging(string value);
     partial void OntcNoChanged();
     partial void OnmailAddressChanging(string value);
     partial void OnmailAddressChanged();
@@ -349,14 +353,18 @@ namespace ditipTravel
     partial void OnaddressChanged();
     partial void OnstateChanging(string value);
     partial void OnstateChanged();
-    partial void OnprepaymentAmountChanging(System.Nullable<int> value);
+    partial void OnprepaymentAmountChanging(System.Nullable<decimal> value);
     partial void OnprepaymentAmountChanged();
     partial void OnprepaymentDateChanging(System.Nullable<System.DateTime> value);
     partial void OnprepaymentDateChanged();
-    partial void OndueAmountChanging(System.Nullable<int> value);
+    partial void OndueAmountChanging(System.Nullable<decimal> value);
     partial void OndueAmountChanged();
     partial void OndueDateChanging(System.Nullable<System.DateTime> value);
     partial void OndueDateChanged();
+    partial void OncreateUserChanging(string value);
+    partial void OncreateUserChanged();
+    partial void OncreateDateChanging(System.Nullable<System.DateTime> value);
+    partial void OncreateDateChanged();
     #endregion
 		
 		public tbl_Travel()
@@ -544,8 +552,8 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passaportNo", DbType="Int")]
-		public System.Nullable<int> passaportNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passaportNo", DbType="NChar(7)")]
+		public string passaportNo
 		{
 			get
 			{
@@ -584,8 +592,8 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tcNo", DbType="Int")]
-		public System.Nullable<int> tcNo
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tcNo", DbType="NVarChar(11)")]
+		public string tcNo
 		{
 			get
 			{
@@ -684,8 +692,8 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prepaymentAmount", DbType="Int")]
-		public System.Nullable<int> prepaymentAmount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prepaymentAmount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> prepaymentAmount
 		{
 			get
 			{
@@ -724,8 +732,8 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dueAmount", DbType="Int")]
-		public System.Nullable<int> dueAmount
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dueAmount", DbType="Decimal(10,2)")]
+		public System.Nullable<decimal> dueAmount
 		{
 			get
 			{
@@ -760,6 +768,46 @@ namespace ditipTravel
 					this._dueDate = value;
 					this.SendPropertyChanged("dueDate");
 					this.OndueDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createUser", DbType="NVarChar(255)")]
+		public string createUser
+		{
+			get
+			{
+				return this._createUser;
+			}
+			set
+			{
+				if ((this._createUser != value))
+				{
+					this.OncreateUserChanging(value);
+					this.SendPropertyChanging();
+					this._createUser = value;
+					this.SendPropertyChanged("createUser");
+					this.OncreateUserChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createDate", DbType="Date")]
+		public System.Nullable<System.DateTime> createDate
+		{
+			get
+			{
+				return this._createDate;
+			}
+			set
+			{
+				if ((this._createDate != value))
+				{
+					this.OncreateDateChanging(value);
+					this.SendPropertyChanging();
+					this._createDate = value;
+					this.SendPropertyChanged("createDate");
+					this.OncreateDateChanged();
 				}
 			}
 		}

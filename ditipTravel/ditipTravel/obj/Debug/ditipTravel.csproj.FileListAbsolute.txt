@@ -181,4 +181,4 @@ C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditip
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.CoreCompileInputs.cache
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.dll
 C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.pdb
-C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.AssemblyReference.cache
+C:\Users\Pc\Documents\GitHub\ditipTravel\ditipTravel\ditipTravel\obj\Debug\ditipTravel.csproj.CopyComplete

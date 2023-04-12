@@ -102,7 +102,7 @@
                   <SettingsPager Position="Top" PageSize="20">
                       <PageSizeItemSettings Items="50, 100, 250, 500" />
                   </SettingsPager>
-                  <Settings ShowHeaderFilterButton="True" />
+                  <Settings ShowHeaderFilterButton="True" HorizontalScrollBarMode="Visible" VerticalScrollBarMode="Visible" />
                   <SettingsSearchPanel Visible="True" />
                    
                   <SettingsContextMenu Enabled="true" RowMenuItemVisibility-ExportMenu-Visible="true" />

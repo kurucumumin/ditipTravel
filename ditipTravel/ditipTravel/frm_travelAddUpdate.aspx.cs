@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Data;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 
@@ -7,6 +8,14 @@ namespace ditipTravel
 {
     public partial class frm_travelAddUpdate : System.Web.UI.Page
     {
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            CultureInfo newCulture = (CultureInfo)CultureInfo.CurrentCulture.Clone();
+            newCulture.NumberFormat.CurrencySymbol = "€";
+            System.Threading.Thread.CurrentThread.CurrentCulture = newCulture;
+            System.Threading.Thread.CurrentThread.CurrentUICulture = newCulture;
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -24,19 +33,35 @@ namespace ditipTravel
                         pageName.InnerText = "Seyahat Güncelle";
                         pageName2.InnerText = "Seyahat Güncelle";
                         btnUpdate.Text = "Güncelle";
-                        passDiv.Visible = false;
 
                         if (Request.QueryString["Uid"] != null)
                         {
                             dbDataContext db = new dbDataContext();
 
-                            var user = db.tbl_Travels.Where(s => s.id == Convert.ToInt32(Request.QueryString["Uid"])).FirstOrDefault();
+                            var travel = db.tbl_Travels.Where(s => s.id == Convert.ToInt32(Request.QueryString["Uid"])).FirstOrDefault();
 
-                            if (user != null)
+                            if (travel != null)
                             {
-                                txtName.Text = user.name;
-                                txtSurname.Text = user.surname;
-                                
+
+                                txtName.Text = travel.name;
+                                txtSurname.Text = travel.surname;
+                                radioButtonListGender.SelectedIndex = (travel.gender == "Erkek" ? 0 : 1);
+                                radioButtonListStudent.SelectedIndex = (travel.student == true ? 0 : 1);
+                                txtBirthPlace.Text = travel.birthPlace;
+                                txtBirthday.Text = travel.birthDay.ToString();
+                                txtAirport.Text = travel.airport;
+                                txtNationalty.Text = travel.nationality;
+                                txtPassaportNo.Text = travel.passaportNo;
+                                txtPassaportDate.Text = travel.passaportDate.ToString();
+                                txtTc.Text = travel.tcNo.ToString();
+                                txtMail.Text = travel.mailAddress;
+                                txtMobileNumber.Text = travel.mobilePhone;
+                                txtAddress.Text = travel.address;
+                                txtState.Text = travel.state;
+                                txtPrepaymentAmount.Text = travel.prepaymentAmount.ToString();
+                                txtPrepaymentDate.Text = travel.prepaymentDate.ToString();
+                                txtDueAmount.Text = travel.dueAmount.ToString();
+                                txtDueDate.Text = travel.dueDate.ToString();
                             }
                         }
                     }
@@ -60,15 +85,31 @@ namespace ditipTravel
 
             if (Request.QueryString["Mod"] == "New")
             {
-                tbl_User user = new tbl_User();
+                tbl_Travel travel = new tbl_Travel();
 
-                user.name = txtName.Text;
-                user.surname = txtSurname.Text;
-                user.username = txtUsername.Text;
-                user.password = txtNewPass.Text;
-                user.status = (radioButtonList.SelectedIndex == 0 ? true : false);
+                travel.name = txtName.Text;
+                travel.surname = txtSurname.Text;
+                travel.gender = (radioButtonListGender.SelectedIndex == 0 ? "Erkek" : "Kadın");
+                travel.student = (radioButtonListStudent.SelectedIndex == 0 ? true : false);
+                travel.birthPlace = txtBirthPlace.Text;
+                travel.birthDay = (txtBirthday.Text != null ? DateTime.ParseExact(txtBirthday.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.airport = txtAirport.Text;
+                travel.nationality = txtNationalty.Text;
+                travel.passaportNo = txtPassaportNo.Text;
+                travel.passaportDate = (txtPassaportDate.Text != null ? DateTime.ParseExact(txtPassaportDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.tcNo = (txtTc.Text != null ? txtTc.Text : "00000000000");
+                travel.mailAddress = txtMail.Text;
+                travel.mobilePhone = txtMobileNumber.Text.Trim().Replace(" ", string.Empty);
+                travel.address = txtAddress.Text;
+                travel.state = txtState.Text;
+                travel.prepaymentAmount = Convert.ToDecimal(txtPrepaymentAmount.Text.Remove(0, 1));
+                travel.prepaymentDate = (txtPrepaymentDate.Text != null ? DateTime.ParseExact(txtPrepaymentDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.dueAmount = Convert.ToDecimal(txtDueAmount.Text.Remove(0, 1));
+                travel.dueDate = (txtDueDate.Text != null ? DateTime.ParseExact(txtDueDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.createUser = (Session["username"] != null ? Session["username"].ToString() : "Admin");
+                travel.createDate = DateTime.Now;
 
-                db.tbl_Users.InsertOnSubmit(user);
+                db.tbl_Travels.InsertOnSubmit(travel);
                 db.SubmitChanges();
 
                 #region Loglama
@@ -85,14 +126,29 @@ namespace ditipTravel
             }
             else if (Request.QueryString["Mod"] == "Update")
             {
-                var user = db.tbl_Users.Where(s => s.id == Convert.ToInt32(Request.QueryString["Uid"])).FirstOrDefault();
+                var travel = db.tbl_Travels.Where(s => s.id == Convert.ToInt32(Request.QueryString["Uid"])).FirstOrDefault();
 
-                if (user != null)
+                if (travel != null)
                 {
-                    user.name = txtName.Text;
-                    user.surname = txtSurname.Text;
-                    user.username = txtUsername.Text;
-                    user.status = (radioButtonList.SelectedIndex == 0 ? true : false);
+                    travel.name = txtName.Text;
+                    travel.surname = txtSurname.Text;
+                    travel.gender = (radioButtonListGender.SelectedIndex == 0 ? "Erkek" : "Kadın");
+                    travel.student = (radioButtonListStudent.SelectedIndex == 0 ? true : false);
+                    travel.birthPlace = txtBirthPlace.Text;
+                    travel.birthDay = (txtBirthday.Text != null ? DateTime.ParseExact(txtBirthday.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                    travel.airport = txtAirport.Text;
+                    travel.nationality = txtNationalty.Text;
+                    travel.passaportNo = txtPassaportNo.Text;
+                    travel.passaportDate = (txtPassaportDate.Text != null ? DateTime.ParseExact(txtPassaportDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                    travel.tcNo = (txtTc.Text != null ? txtTc.Text : "00000000000");
+                    travel.mailAddress = txtMail.Text;
+                    travel.mobilePhone = txtMobileNumber.Text.Trim().Replace(" ", string.Empty);
+                    travel.address = txtAddress.Text;
+                    travel.state = txtState.Text;
+                    travel.prepaymentAmount = Convert.ToDecimal(txtPrepaymentAmount.Text.Remove(0, 1));
+                    travel.prepaymentDate = (txtPrepaymentDate.Text != null ? DateTime.ParseExact(txtPrepaymentDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                    travel.dueAmount = Convert.ToDecimal(txtDueAmount.Text.Remove(0, 1));
+                    travel.dueDate = (txtDueDate.Text != null ? DateTime.ParseExact(txtDueDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
 
                     db.SubmitChanges();
 

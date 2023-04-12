@@ -6,7 +6,7 @@
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <div class="content-wrapper">
+    <div class="content-wrapper">
         <!-- Content Header (Page header) -->
         <div class="content-header">
             <div class="container-fluid">
@@ -76,11 +76,49 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Kullanıcı Adı</span>
+                    <span>Cinsiyet</span>
                 </div>
                 <div class="col-7">
                     <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
-                        <dx:ASPxTextBox ID="txtUsername" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <dx:ASPxRadioButtonList ID="radioButtonListGender" SelectedIndex="0" runat="server" RepeatColumns="2" RepeatLayout="Flow">
+                            <CaptionSettings Position="Top" />
+                            <Items>
+                                <dx:ListEditItem Text="Erkek" Value="0" />
+                                <dx:ListEditItem Text="Kadın" Value="1" />
+                            </Items>
+                        </dx:ASPxRadioButtonList>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Öğrenci mi?</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxRadioButtonList ID="radioButtonListStudent" SelectedIndex="0" runat="server" RepeatColumns="2" RepeatLayout="Flow">
+                            <CaptionSettings Position="Top" />
+                            <Items>
+                                <dx:ListEditItem Text="Evet" Value="0" />
+                                <dx:ListEditItem Text="Hayır" Value="1" />
+                            </Items>
+                        </dx:ASPxRadioButtonList>
+                    </div>
+                </div>
+            </div>
+
+             <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Doğum Yeri</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtBirthPlace" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
                         <span class="focus-input100"></span>
                     </div>
                 </div>
@@ -90,34 +128,13 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Aktif</span>
-                </div>
-            <div class="col-7">
-                <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
-                    <dx:ASPxRadioButtonList ID="radioButtonList" SelectedIndex="0" runat="server" RepeatColumns="2" RepeatLayout="Flow">
-                        <CaptionSettings Position="Top" />
-                        <Items>
-                            <dx:ListEditItem Text="Aktif" Value="0" />
-                            <dx:ListEditItem Text="Pasif" Value="1" />
-                        </Items>
-                    </dx:ASPxRadioButtonList>
-                </div>
-            </div>
-        </div>
-
-
-        <br />
-
-        <div runat="server" id="passDiv">
-
-            <div class="form-row">
-                <div class="col-3">
-                    <span>Yeni Şifre</span>
+                    <span>Doğum Tarihi</span>
                 </div>
                 <div class="col-7">
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type password">
-                        <dx:ASPxTextBox ID="txtNewPass" CssClass="form-control" runat="server" Width="70%" Password="true"></dx:ASPxTextBox>
-                        <%--<input id="txtYeniSifre" runat="server" class="input100" type="password" name="YeniSifre" placeholder="Yeni Şifre" />--%>
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtBirthday" CssClass="form-control" runat="server" Width="70%">
+                            <MaskSettings Mask="00-00-0000" />  
+                        </dx:ASPxTextBox>
                         <span class="focus-input100"></span>
                     </div>
                 </div>
@@ -127,67 +144,229 @@
 
             <div class="form-row">
                 <div class="col-3">
-                    <span>Yeni Şifre Tekrar</span>
+                    <span>Havaalanı</span>
                 </div>
                 <div class="col-7">
-                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type password">
-                        <dx:ASPxTextBox ID="txtNewPassAgain" CssClass="form-control" runat="server" Width="70%" Password="true"></dx:ASPxTextBox>
-                        <%--<input id="txtYeniSifreTekrar" runat="server" class="input100" type="password" name="YeniSifreTekrar" placeholder="Yeni Şifre Tekrar" />--%>
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtAirport" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
                         <span class="focus-input100"></span>
                     </div>
                 </div>
             </div>
 
-            <div class="form-row">
-                <div class="col">
-                    <hr />
-                    <p> <strong>Not: </strong> Şifre en az 6 karakterden oluşmalıdır. Rakam ve harf içermelidir. Güvenliğiniz için şifrenizi kimse ile paylaşmayınınz! </p>
-                   <%-- <p><strong>Note: </strong>Password must be at least 6 characters. It must contain numbers and letters. For your safety, do not share your password with anyone! </p>--%>
+            <br />
 
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Uyruk</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtNationalty" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
                 </div>
             </div>
 
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Pasaport No</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtPassaportNo" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Pasaport Tarihi</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtPassaportDate" CssClass="form-control" runat="server" Width="70%">
+                             <MaskSettings Mask="00-00-0000" /> 
+                        </dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>TC No</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtTc" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Mail Adres</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtMail" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Cep Telefonu</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtMobileNumber" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Adres</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtAddress" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Eyalet</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtState" CssClass="form-control" runat="server" Width="70%"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Ön Ödeme Tutarı</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtPrepaymentAmount" CssClass="form-control" runat="server" Width="70%" DisplayFormatString="{0:C}"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Ön Ödeme Tarihi</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtPrepaymentDate" CssClass="form-control" runat="server" Width="70%">
+                             <MaskSettings Mask="00-00-0000" /> 
+                        </dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Son Ödeme Tutarı</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtDueAmount" CssClass="form-control" runat="server" Width="70%" DisplayFormatString="{0:C}"></dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="form-row">
+                <div class="col-3">
+                    <span>Son Ödeme Tarihi</span>
+                </div>
+                <div class="col-7">
+                    <div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20">
+                        <dx:ASPxTextBox ID="txtDueDate" CssClass="form-control" runat="server" Width="70%">
+                             <MaskSettings Mask="00-00-0000" /> 
+                        </dx:ASPxTextBox>
+                        <span class="focus-input100"></span>
+                    </div>
+                </div>
+            </div>
+
+            <dx:ASPxPopupControl ID="PopupMessageBoxHata" runat="server" AllowDragging="True" ShowOnPageLoad="false" ClientInstanceName="modal"
+                HeaderText="Mesaj Ekranı" CloseOnEscape="false"
+                CloseAction="CloseButton" ShowFooter="false">
+                <ContentStyle Paddings-Padding="0" Paddings-PaddingTop="12">
+                    <Paddings Padding="0px" PaddingTop="12px" />
+                </ContentStyle>
+                <SettingsAdaptivity Mode="Always" VerticalAlign="WindowCenter" MinWidth="300px" />
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <div class="alert alert-danger" runat="server" id="div1" role="alert">
+                            <strong>
+                                <dx:ASPxLabel ID="lblMessageHata" ForeColor="White" runat="server" Text="Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!."></dx:ASPxLabel>
+                            </strong>
+                        </div>
+
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+            </dx:ASPxPopupControl>
+
+            <dx:ASPxPopupControl ID="PopupMessageBoxBasarili" runat="server" AllowDragging="True" ShowOnPageLoad="false" ClientInstanceName="modal"
+                HeaderText="Mesaj Ekranı" CloseOnEscape="false"
+                CloseAction="CloseButton" ShowFooter="false">
+                <ContentStyle Paddings-Padding="0" Paddings-PaddingTop="12">
+                    <Paddings Padding="0px" PaddingTop="12px" />
+                </ContentStyle>
+                <SettingsAdaptivity Mode="Always" VerticalAlign="WindowCenter" MinWidth="300px" />
+                <ContentCollection>
+                    <dx:PopupControlContentControl>
+                        <div class="alert alert-success" runat="server" id="div2" role="alert">
+                            <strong>
+                                <dx:ASPxLabel ID="lblMessageBasarili" ForeColor="White" runat="server" Text="Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!."></dx:ASPxLabel>
+                            </strong>
+                        </div>
+
+                    </dx:PopupControlContentControl>
+                </ContentCollection>
+            </dx:ASPxPopupControl>
+
         </div>
-
-        <dx:ASPxPopupControl ID="PopupMessageBoxHata" runat="server" AllowDragging="True" ShowOnPageLoad="false" ClientInstanceName="modal"
-            HeaderText="Mesaj Ekranı" CloseOnEscape="false"
-            CloseAction="CloseButton" ShowFooter="false">
-            <ContentStyle Paddings-Padding="0" Paddings-PaddingTop="12">
-                <Paddings Padding="0px" PaddingTop="12px" />
-            </ContentStyle>
-            <SettingsAdaptivity Mode="Always" VerticalAlign="WindowCenter" MinWidth="300px" />
-            <ContentCollection>
-                <dx:PopupControlContentControl>
-                    <div class="alert alert-danger" runat="server" id="div1" role="alert">
-                        <strong>
-                            <dx:ASPxLabel ID="lblMessageHata" ForeColor="White" runat="server" Text="Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!."></dx:ASPxLabel>
-                        </strong>
-                    </div>
-
-                </dx:PopupControlContentControl>
-            </ContentCollection>
-        </dx:ASPxPopupControl>
-
-        <dx:ASPxPopupControl ID="PopupMessageBoxBasarili" runat="server" AllowDragging="True" ShowOnPageLoad="false" ClientInstanceName="modal"
-            HeaderText="Mesaj Ekranı" CloseOnEscape="false"
-            CloseAction="CloseButton" ShowFooter="false">
-            <ContentStyle Paddings-Padding="0" Paddings-PaddingTop="12">
-                <Paddings Padding="0px" PaddingTop="12px" />
-            </ContentStyle>
-            <SettingsAdaptivity Mode="Always" VerticalAlign="WindowCenter" MinWidth="300px" />
-            <ContentCollection>
-                <dx:PopupControlContentControl>
-                    <div class="alert alert-success" runat="server" id="div2" role="alert">
-                        <strong>
-                            <dx:ASPxLabel ID="lblMessageBasarili" ForeColor="White" runat="server" Text="Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!. Kayıt esnasında problem ile karşılaşıldı!."></dx:ASPxLabel>
-                        </strong>
-                    </div>
-
-                </dx:PopupControlContentControl>
-            </ContentCollection>
-        </dx:ASPxPopupControl>
-
-    </div>
 
     </div>
 </asp:Content>
