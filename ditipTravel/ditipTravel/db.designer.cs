@@ -492,7 +492,7 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthDay", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_birthDay", DbType="DateTime")]
 		public System.Nullable<System.DateTime> birthDay
 		{
 			get
@@ -572,7 +572,7 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passaportDate", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_passaportDate", DbType="DateTime")]
 		public System.Nullable<System.DateTime> passaportDate
 		{
 			get
@@ -712,7 +712,7 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prepaymentDate", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_prepaymentDate", DbType="DateTime")]
 		public System.Nullable<System.DateTime> prepaymentDate
 		{
 			get
@@ -752,7 +752,7 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dueDate", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dueDate", DbType="DateTime")]
 		public System.Nullable<System.DateTime> dueDate
 		{
 			get
@@ -792,7 +792,7 @@ namespace ditipTravel
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createDate", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_createDate", DbType="DateTime")]
 		public System.Nullable<System.DateTime> createDate
 		{
 			get

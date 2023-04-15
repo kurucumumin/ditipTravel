@@ -8,10 +8,10 @@
         <elementListCompartment Id="1a9bc136-3a83-4cf6-ae4a-c2d16ae7d29c" absoluteBounds="5.14, 2.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="f14aead0-bdc9-46bd-b45a-c3b374a04724" absoluteBounds="1.625, 1, 2, 5.0400211588541657">
+    <classShape Id="e5d3eef5-b450-44c8-9d5f-aaa74ddb3831" absoluteBounds="0.875, 1.125, 2, 5.0400211588541657">
       <DataClassMoniker Name="/dbDataContext/tbl_Travel" />
       <nestedChildShapes>
-        <elementListCompartment Id="513741f4-873e-4ea4-b82e-555e9b88aea6" absoluteBounds="1.6400000000000001, 1.46, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="4976cba7-b0fc-42be-b771-aec28029c852" absoluteBounds="0.89000000000000012, 1.585, 1.9700000000000002, 4.4800211588541661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

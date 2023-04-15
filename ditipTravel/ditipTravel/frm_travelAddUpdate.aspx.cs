@@ -48,20 +48,20 @@ namespace ditipTravel
                                 radioButtonListGender.SelectedIndex = (travel.gender == "Erkek" ? 0 : 1);
                                 radioButtonListStudent.SelectedIndex = (travel.student == true ? 0 : 1);
                                 txtBirthPlace.Text = travel.birthPlace;
-                                txtBirthday.Text = travel.birthDay.ToString();
+                                txtBirthday.Text = (travel.birthDay != null ? Convert.ToDateTime(travel.birthDay.ToString()).ToString("dd-MM-yyyy") : "");
                                 txtAirport.Text = travel.airport;
                                 txtNationalty.Text = travel.nationality;
                                 txtPassaportNo.Text = travel.passaportNo;
-                                txtPassaportDate.Text = travel.passaportDate.ToString();
+                                txtPassaportDate.Text = (travel.passaportDate != null ? Convert.ToDateTime(travel.passaportDate.ToString()).ToString("dd-MM-yyyy") : "");
                                 txtTc.Text = travel.tcNo.ToString();
                                 txtMail.Text = travel.mailAddress;
                                 txtMobileNumber.Text = travel.mobilePhone;
                                 txtAddress.Text = travel.address;
                                 txtState.Text = travel.state;
                                 txtPrepaymentAmount.Text = travel.prepaymentAmount.ToString();
-                                txtPrepaymentDate.Text = travel.prepaymentDate.ToString();
+                                txtPrepaymentDate.Text = (travel.prepaymentDate != null ? Convert.ToDateTime(travel.prepaymentDate.ToString()).ToString("dd-MM-yyyy") : "");
                                 txtDueAmount.Text = travel.dueAmount.ToString();
-                                txtDueDate.Text = travel.dueDate.ToString();
+                                txtDueDate.Text = (travel.dueDate != null ? Convert.ToDateTime(travel.dueDate.ToString()).ToString("dd-MM-yyyy") : "");
                             }
                         }
                     }
@@ -92,20 +92,20 @@ namespace ditipTravel
                 travel.gender = (radioButtonListGender.SelectedIndex == 0 ? "Erkek" : "Kadın");
                 travel.student = (radioButtonListStudent.SelectedIndex == 0 ? true : false);
                 travel.birthPlace = txtBirthPlace.Text;
-                travel.birthDay = (txtBirthday.Text != null ? DateTime.ParseExact(txtBirthday.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.birthDay = (txtBirthday.Text != "" ? DateTime.ParseExact(txtBirthday.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
                 travel.airport = txtAirport.Text;
                 travel.nationality = txtNationalty.Text;
                 travel.passaportNo = txtPassaportNo.Text;
-                travel.passaportDate = (txtPassaportDate.Text != null ? DateTime.ParseExact(txtPassaportDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.passaportDate = (txtPassaportDate.Text != "" ? DateTime.ParseExact(txtPassaportDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
                 travel.tcNo = (txtTc.Text != null ? txtTc.Text : "00000000000");
                 travel.mailAddress = txtMail.Text;
                 travel.mobilePhone = txtMobileNumber.Text.Trim().Replace(" ", string.Empty);
                 travel.address = txtAddress.Text;
                 travel.state = txtState.Text;
-                travel.prepaymentAmount = Convert.ToDecimal(txtPrepaymentAmount.Text.Remove(0, 1));
-                travel.prepaymentDate = (txtPrepaymentDate.Text != null ? DateTime.ParseExact(txtPrepaymentDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
-                travel.dueAmount = Convert.ToDecimal(txtDueAmount.Text.Remove(0, 1));
-                travel.dueDate = (txtDueDate.Text != null ? DateTime.ParseExact(txtDueDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.prepaymentAmount = (String.Compare(CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol,txtPrepaymentAmount.Text) != -1 ? Convert.ToDecimal(txtPrepaymentAmount.Text) : Convert.ToDecimal(txtPrepaymentAmount.Text.Remove(0, 1)));
+                travel.prepaymentDate = (txtPrepaymentDate.Text != "" ? DateTime.ParseExact(txtPrepaymentDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                travel.dueAmount = (String.Compare(CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol, txtDueAmount.Text) != -1 ? Convert.ToDecimal(txtDueAmount.Text) : Convert.ToDecimal(txtDueAmount.Text.Remove(0, 1)));
+                travel.dueDate = (txtDueDate.Text != "" ? DateTime.ParseExact(txtDueDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
                 travel.createUser = (Session["username"] != null ? Session["username"].ToString() : "Admin");
                 travel.createDate = DateTime.Now;
 
@@ -145,9 +145,9 @@ namespace ditipTravel
                     travel.mobilePhone = txtMobileNumber.Text.Trim().Replace(" ", string.Empty);
                     travel.address = txtAddress.Text;
                     travel.state = txtState.Text;
-                    travel.prepaymentAmount = Convert.ToDecimal(txtPrepaymentAmount.Text.Remove(0, 1));
-                    travel.prepaymentDate = (txtPrepaymentDate.Text != null ? DateTime.ParseExact(txtPrepaymentDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
-                    travel.dueAmount = Convert.ToDecimal(txtDueAmount.Text.Remove(0, 1));
+                    travel.prepaymentAmount = (String.Compare(CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol, txtPrepaymentAmount.Text) != -1 ? Convert.ToDecimal(txtPrepaymentAmount.Text) : Convert.ToDecimal(txtPrepaymentAmount.Text.Remove(0, 1)));
+                    travel.prepaymentDate = (txtPrepaymentDate.Text != "" ? DateTime.ParseExact(txtPrepaymentDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
+                    travel.dueAmount = (String.Compare(CultureInfo.CurrentCulture.NumberFormat.CurrencySymbol, txtDueAmount.Text) != -1 ? Convert.ToDecimal(txtDueAmount.Text) : Convert.ToDecimal(txtDueAmount.Text.Remove(0, 1)));
                     travel.dueDate = (txtDueDate.Text != null ? DateTime.ParseExact(txtDueDate.Text, "dd-MM-yyyy", CultureInfo.InvariantCulture) : DateTime.Now);
 
                     db.SubmitChanges();
